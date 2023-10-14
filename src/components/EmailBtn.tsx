@@ -1,8 +1,9 @@
 "use client";
-import React, { useState } from "react";
+
 import NextIcon from "@assets/images/next.svg";
-import Image from "next/image";
 import { Button } from "@components/ui/button";
+import Image from "next/image";
+import React, { useState } from "react";
 
 const EmailBtn: React.FC<any> = ({ text, _class }) => {
   const [email] = useState("hello@salemkode.com");

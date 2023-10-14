@@ -1,14 +1,14 @@
 "use client";
-import React, { useState } from "react";
-import ProjectCard from "../ProjectCard";
 
-// Images for projects
-import SnapCraftImage from "@assets/images/projects/snapcraft.png";
+import ProjectCard from "../ProjectCard";
 import ExplorerImage from "@assets/images/projects/explorer.png";
 import FastStarterImage from "@assets/images/projects/faststarter.png";
 import SlpUploaderImage from "@assets/images/projects/slp-uploader.png";
+// Images for projects
+import SnapCraftImage from "@assets/images/projects/snapcraft.png";
+import React, { useState } from "react";
 
-const ProjectSection: React.FC = () => {
+const ProjectSection = () => {
   const [projects] = useState([
     {
       title: "Snapcraft Downloader",

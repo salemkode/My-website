@@ -1,5 +1,5 @@
-import NavBar from "@/components/NavBar";
 import "./globals.css";
+import NavBar from "@/components/layout/NavBar";
 import type { Metadata } from "next";
 import { Gabarito, Manrope } from "next/font/google";
 

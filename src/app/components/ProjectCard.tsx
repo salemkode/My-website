@@ -1,8 +1,8 @@
-import React, { useRef } from "react";
-import Image, { StaticImageData } from "next/image";
 import { Card } from "@components/ui/card";
-import { twMerge } from "tailwind-merge";
 import { motion, useScroll } from "framer-motion";
+import Image, { StaticImageData } from "next/image";
+import React, { useRef } from "react";
+import { twMerge } from "tailwind-merge";
 
 interface ProjectProps {
   title: string;
