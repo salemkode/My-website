@@ -28,7 +28,7 @@ const EmailBtn: React.FC<any> = ({ text, _class }) => {
       <a
         onClick={copyMail}
         href={`mailto:${email}`}
-        className="flex items-center p-3"
+        className="flex items-center p-2"
       >
         <strong>{text}</strong>
         <Image
