@@ -37,15 +37,12 @@ const ProjectCard: React.FC<ProjectProps> = ({
       <a className="flex" target="_blank" href={link}>
         <Card className="mx-auto flex min-w-[500px] overflow-hidden">
           <div className="group relative flex w-full">
-            <div className="w-1/2 p-6">
-              <h1 className="pb-4 text-2xl">{title}</h1>
+            <div className="flex w-1/2 flex-col p-6">
+              <h1 className="pb-4 text-2xl font-bold">{title}</h1>
               <p className="pb-4">{description}</p>
-              <div className="flex flex-wrap gap-2">
+              <div className="mt-auto flex flex-wrap gap-2">
                 {tags.map((tag) => (
-                  <Card
-                    key={tag}
-                    className="bg-primary p-1 px-3 text-sm font-bold text-white"
-                  >
+                  <Card key={tag} className="border-primary p-1 px-3 text-sm">
                     {tag}
                   </Card>
                 ))}
