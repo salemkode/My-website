@@ -1,6 +1,6 @@
 import "server-only";
 
-let FooterSection = () => (
+let Footer = () => (
   <footer className="bg-primary py-4 font-bold text-white">
     <div className="container justify-between md:flex">
       <h4 className="my-2"> All rights reserved {new Date().getFullYear()}</h4>
@@ -9,4 +9,4 @@ let FooterSection = () => (
   </footer>
 );
 
-export default FooterSection;
+export default Footer;

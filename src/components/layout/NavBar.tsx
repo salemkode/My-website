@@ -1,9 +1,10 @@
 "use client";
-import { useEffect, useState } from "react";
+
+import NavBarAccounts from "./NavBarAccounts";
 import SlideUpDown from "@components/SlideUpDown";
 import MenuIcon from "@components/icons/MenuIcon";
-import NavBarAccounts from "./NavBarAccounts";
-import { twMerge } from "tailwind-merge";
+import Link from "next/link";
+import { useEffect, useState } from "react";
 
 const NavBar = () => {
   const [showDropdown, setShowDropdown] = useState(
@@ -34,7 +35,7 @@ const NavBar = () => {
     <header className="fixed left-0 right-0 z-50 py-4 font-bold backdrop-blur-lg transition">
       <nav className="container flex w-full flex-col items-center justify-between md:flex-row">
         <h1 className="flex w-full justify-between text-2xl md:w-auto">
-          <a href="/">SalemKode</a>
+          <Link href="/">SalemKode</Link>
           <MenuIcon onClick={() => setShowDropdown((isVisible) => !isVisible)}>
             Show
           </MenuIcon>

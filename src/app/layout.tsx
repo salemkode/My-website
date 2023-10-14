@@ -1,4 +1,5 @@
 import "./globals.css";
+import Footer from "@/components/layout/Footer";
 import NavBar from "@/components/layout/NavBar";
 import type { Metadata } from "next";
 import { Gabarito, Manrope } from "next/font/google";
@@ -35,7 +36,7 @@ export default function RootLayout({
       >
         <NavBar />
         <div>{children}</div>
-        <footer />
+        <Footer />
       </body>
     </html>
   );
