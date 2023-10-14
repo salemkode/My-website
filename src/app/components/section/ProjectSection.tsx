@@ -15,7 +15,7 @@ const ProjectSection: React.FC = () => {
       description: "A simple GUI website to download snapcraft packages files.",
       image: SnapCraftImage,
       link: "https://snap.salemkode.com/",
-      tags: ["React", "Bootstrap"],
+      tags: ["ReactJs", "Bootstrap"],
     },
     {
       title: "Bitcoin cash explorer",
@@ -23,11 +23,12 @@ const ProjectSection: React.FC = () => {
         "A simple explorer for bitcoin cash blockchain supporting tokens.",
       image: ExplorerImage,
       link: "https://explorer.salemkode.com/",
-      tags: ["Vuejs", "Typescript"],
+      tags: ["VueJs", "Typescript"],
     },
     {
       title: "Slp Icon uploader",
-      description: "Easy Way to upload slp token icon",
+      description:
+        "Streamlined token icon upload and formatting tool to Github.",
       image: SlpUploaderImage,
       link: "https://slp-icons.salemkode.com/",
       tags: ["NodeJs", "Github API"],
@@ -38,7 +39,7 @@ const ProjectSection: React.FC = () => {
         "A simple explorer for bitcoin cash blockchain supporting tokens.",
       image: FastStarterImage,
       link: "https://faststarter.salemkode.com/",
-      tags: ["Vuejs", "Solidity"],
+      tags: ["VueJs", "Solidity"],
     },
   ]);
   return (
