@@ -43,9 +43,9 @@ const ProjectSection = () => {
     },
   ]);
   return (
-    <div className="container flex min-h-[90vh] flex-col justify-center">
-      <h2 className="pb-4 text-center text-4xl font-thin">Projects</h2>
-      <div className="mx-auto grid w-max gap-2 pt-3 lg:grid-cols-2">
+    <div className="container flex flex-col justify-center">
+      <h2 className="pb-20 text-center text-4xl font-thin">Projects</h2>
+      <div className="mx-auto grid w-max gap-2 pt-3 xl:grid-cols-2 py-32">
         {projects.map((project) => (
           <ProjectCard key={project.link} {...project} />
         ))}

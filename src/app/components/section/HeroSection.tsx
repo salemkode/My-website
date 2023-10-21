@@ -10,7 +10,7 @@ import React, { useRef } from "react";
 
 const HeroSectionInfo = () => {
   return (
-    <div className="w-max text-lg sm:text-2xl lg:text-3xl">
+    <div className="text-lg sm:text-2xl lg:text-3xl md:w-1/2">
       <p className="my-1 flex items-center gap-1">
         <span>Hi,</span>
         <Image
@@ -58,7 +58,7 @@ const HeroSection = () => {
   return (
     <section
       ref={sectionRef}
-      className="container relative flex h-screen flex-col-reverse items-center justify-center md:flex-row"
+      className="container relative flex h-screen flex-col-reverse items-center md:flex-row"
     >
       <div
         className="clip absolute left-1/2 top-1/2 -z-10 h-2/5 w-full -translate-x-1/2 -translate-y-1/2 -rotate-12 rounded-xl blur-3xl"

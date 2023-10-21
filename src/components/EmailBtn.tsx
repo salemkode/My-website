@@ -24,7 +24,7 @@ const EmailBtn: React.FC<any> = ({ text, _class }) => {
   };
 
   return (
-    <Button className="rounded-full group flex">
+    <Button className="rounded-full md:block group flex">
       <a
         onClick={copyMail}
         href={`mailto:${email}`}
