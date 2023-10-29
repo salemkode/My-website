@@ -41,8 +41,8 @@ const NavBar = () => {
           </MenuIcon>
         </h1>
         <SlideUpDown
-          closed={!showDropdown}
           className="md:block md:h-auto md:transition-none"
+          closed={!showDropdown}
         >
           <NavBarAccounts />
         </SlideUpDown>

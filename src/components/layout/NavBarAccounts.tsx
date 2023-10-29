@@ -29,19 +29,19 @@ const NavBarAccounts = () => {
   ] as const;
 
   return (
-    <ul className="flex my-3 md:m-0">
+    <ul className="my-3 flex md:m-0">
       {accounts.map(({ name, icon, url }) => {
         return (
           <li
-            className="mx-1 block rounded-full p-1.5 transition border-primary border hover:bg-[#21242926] "
+            className="mx-1 block rounded-full border border-primary p-1.5 transition hover:bg-[#21242926] "
             key={name}
           >
             <a href={url} target="_blank">
               <Image
-                src={icon.src}
                 alt={`social media url of ${name}`}
-                width={30}
                 height={30}
+                src={icon.src}
+                width={30}
               />
             </a>
           </li>

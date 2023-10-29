@@ -64,12 +64,12 @@ const SlideUpDown: React.FC<SlideUpDownProps> = ({
 
   return (
     <div
-      ref={outerRef}
       className={twMerge(
         "h-0 opacity-0 transition-[height] duration-300 ease-out",
         className,
       )}
       onTransitionEnd={handleTransitionEnd}
+      ref={outerRef}
       {...rest}
     >
       <>{children}</>

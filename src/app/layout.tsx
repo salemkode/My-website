@@ -27,9 +27,9 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <meta charSet="UTF-8" />
-        <meta name="description" content="Astro description" />
-        <meta name="viewport" content="width=device-width" />
-        <link rel="icon" type="image/svg+xml" href="/favicon.png" />
+        <meta content="Astro description" name="description" />
+        <meta content="width=device-width" name="viewport" />
+        <link href="/favicon.png" rel="icon" type="image/svg+xml" />
       </head>
       <body
         className={`overflow-y-auto overflow-x-hidden ${manrope.className} ${lora.variable}`}

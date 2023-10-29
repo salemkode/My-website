@@ -1,6 +1,6 @@
 "use client";
 
-import NextIcon from "@assets/images/next.svg";
+import NextIcon from "@assets/images/next-message.svg";
 import { Button } from "@components/ui/button";
 import Image from "next/image";
 import React, { useState } from "react";
@@ -24,19 +24,19 @@ const EmailBtn: React.FC<any> = ({ text, _class }) => {
   };
 
   return (
-    <Button className="rounded-full group flex">
+    <Button className="group flex rounded-full">
       <a
-        onClick={copyMail}
-        href={`mailto:${email}`}
         className="flex items-center p-2"
+        href={`mailto:${email}`}
+        onClick={copyMail}
       >
         <strong>{text}</strong>
         <Image
-          src={NextIcon.src}
-          width={24}
-          height={24}
           alt="Next to email icon"
           className="ml-2 p-0.5 transition-[margin] group-hover:ml-6"
+          height={24}
+          src={NextIcon.src}
+          width={24}
         />
       </a>
       <div className="fade">{alert && <div>Coped</div>}</div>

@@ -1,5 +1,7 @@
 "use client";
 
+import NextArrow from "@assets/images/next-arrow.svg";
+import Image from "next/image";
 import React, { MouseEventHandler, useRef } from "react";
 
 function calculatePercentage(x: number): number {
@@ -35,31 +37,48 @@ const AboutSection: React.FC = () => {
   };
 
   return (
-    <div className="container flex min-h-[80vh] flex-col justify-center py-16">
+    <div className="container flex w-full justify-center py-40">
       <div
-        ref={containerRef}
-        className="relative flex-1 w-full py-8 text-4xl md:text-6xl font-display mx-auto"
-        onMouseMove={handleMouseMove}
-        onMouseLeave={() => {
-          containerRef.current?.style.setProperty("--size", "0px");
-        }}
+        className="relative mx-auto h-[300px] w-full rounded-xl border-2 py-8 font-display text-4xl md:text-6xl"
         onMouseEnter={() => {
           containerRef.current?.style.setProperty("--size", `${circleSize}px`);
         }}
+        onMouseLeave={() => {
+          containerRef.current?.style.setProperty("--size", "0px");
+        }}
+        onMouseMove={handleMouseMove}
+        ref={containerRef}
       >
-        <p className="px-6 md:px-12 absolute inset-0 flex flex-col justify-center z-10">
+        <p className="absolute inset-0 z-10 flex flex-col justify-center px-6 md:px-12">
           <b>Creating digital</b>
           magic, pixel by pixel.
         </p>
         <p
-          style={{
-            clipPath: `circle(var(--size) at var(--x) var(--y))`,
+          className="absolute inset-0 z-20 flex flex-col justify-center rounded-xl bg-primary px-6 text-white transition-all ease-linear md:px-12 "
+          onClick={() => {
+            containerRef.current?.style.removeProperty("transitionDuration");
+            containerRef.current?.style.setProperty(
+              "--size",
+              `${circleSize}px`,
+            );
           }}
-          className="px-6 md:px-12 absolute inset-0 flex flex-col justify-center bg-primary text-white z-20 transition-all ease-linear"
+          style={{
+            clipPath: `circle(var(--size, 0px) at var(--x, 50%) var(--y, 50%))`,
+          }}
         >
-          <b>Turning visions</b>
-          into interactive web realities.
+          <b>Code as art,</b>
+          where every line matters.
         </p>
+        <Image
+          alt="Show next message"
+          className="absolute bottom-8 left-1/2 z-30 w-10 -translate-x-1/2 translate-y-1/2 transform cursor-pointer hover:invert"
+          onClick={() => {
+            if (!containerRef.current) return;
+            containerRef.current.style.setProperty("--size", "200%");
+            containerRef.current.style.transitionDuration = "2s";
+          }}
+          src={NextArrow}
+        />
       </div>
     </div>
   );

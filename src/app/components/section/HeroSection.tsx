@@ -10,15 +10,15 @@ import React, { useRef } from "react";
 
 const HeroSectionInfo = () => {
   return (
-    <div className="text-lg sm:text-2xl lg:text-3xl md:w-1/2">
+    <div className="text-lg sm:text-2xl md:w-1/2 lg:text-3xl">
       <p className="my-1 flex items-center gap-1">
         <span>Hi,</span>
         <Image
-          src={HandIcon.src}
           alt="Hand icon for hi"
-          height={40}
-          width={40}
           className="w-[25px] sm:w-[35px] md:w-[40px]"
+          height={40}
+          src={HandIcon.src}
+          width={40}
         />
       </p>
       <p className="my-3">
@@ -31,14 +31,14 @@ const HeroSectionInfo = () => {
       <div className="mt-4 flex items-center">
         <EmailBtn text="Ready for new opportunities, let’s talk" />
         <a
-          target="_blank"
           className="mx-2 hidden aspect-square h-full items-center justify-center rounded-full border border-primary p-2 hover:bg-[#21242926] md:flex"
           href="https://t.me/salemkode"
+          target="_blank"
         >
           <Image
-            src={TelegramIcon.src}
             alt="icon of telegram"
             height={28}
+            src={TelegramIcon.src}
             width={28}
           />
         </a>
@@ -57,8 +57,8 @@ const HeroSection = () => {
 
   return (
     <section
+      className="container relative flex h-screen flex-col-reverse items-center justify-center md:flex-row"
       ref={sectionRef}
-      className="container relative flex h-screen flex-col-reverse items-center md:flex-row"
     >
       <div
         className="clip absolute left-1/2 top-1/2 -z-10 h-2/5 w-full -translate-x-1/2 -translate-y-1/2 -rotate-12 rounded-xl blur-3xl"
@@ -73,11 +73,11 @@ const HeroSection = () => {
       <HeroSectionInfo />
       <div className="md:w-1/2">
         <Image
-          className="ms-auto max-w-[70%]"
           alt="my avatar image"
+          className="mx-auto max-w-[70%] md:ms-auto"
+          height={AvatarImage.height}
           src={AvatarImage.src}
           width={AvatarImage.width}
-          height={AvatarImage.height}
         />
       </div>
       <MouseIcon onClick={goNextSection} />
