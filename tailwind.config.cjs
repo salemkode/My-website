@@ -10,7 +10,6 @@ module.exports = {
   theme: {
     fontFamily: {
       display: "var(--display-font)",
-      lora: "var(--font-lora)",
     },
     container: {
       center: true,
