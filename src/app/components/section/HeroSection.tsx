@@ -7,10 +7,16 @@ import HandIcon from "@/assets/images/hand.png";
 import TelegramIcon from "@assets/images/accounts/telegram.svg";
 import Image from "next/image";
 import React, { useRef } from "react";
+import { twMerge } from "tailwind-merge";
 
-const HeroSectionInfo = () => {
+interface HeroSectionInfoProps {
+  className?: string;
+}
+const HeroSectionInfo: React.FC<HeroSectionInfoProps> = ({ className }) => {
   return (
-    <div className="text-lg sm:text-2xl md:w-1/2 lg:text-3xl">
+    <div
+      className={twMerge("text-lg sm:text-2xl md:w-1/2 lg:text-3xl", className)}
+    >
       <p className="my-1 flex items-center gap-1">
         <span>Hi,</span>
         <Image
@@ -70,11 +76,11 @@ const HeroSection = () => {
                       )`,
         }}
       />
-      <HeroSectionInfo />
-      <div className="md:w-1/2">
+      <HeroSectionInfo className="md:w-2/3 lg:w-1/2" />
+      <div className="md:w-1/3 lg:w-1/2">
         <Image
           alt="my avatar image"
-          className="mx-auto max-w-[70%] md:ms-auto"
+          className="mx-auto md:ms-auto md:max-w-[90%] lg:max-w-[70%]"
           height={AvatarImage.height}
           src={AvatarImage.src}
           width={AvatarImage.width}
