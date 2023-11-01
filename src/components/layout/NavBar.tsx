@@ -10,24 +10,17 @@ const NavBar = () => {
   const [showDropdown, setShowDropdown] = useState(
     () => typeof window === "object" && document.body.offsetWidth > 752,
   );
-  const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
     const changeVisible = () => {
       setShowDropdown(() => document.body.offsetWidth > 752);
     };
-    const changeScroll = () => {
-      setScrolled(() => window.scrollY !== 0);
-    };
 
-    changeScroll();
     changeVisible();
     window.addEventListener("resize", changeVisible);
-    window.addEventListener("scroll", changeScroll);
 
     return () => {
       window.removeEventListener("resize", changeVisible);
-      window.removeEventListener("scroll", changeScroll);
     };
   }, []);
 
