@@ -12,6 +12,13 @@
     ],
     "react/jsx-sort-props": [
       "error"
+    ],
+    "prefer-const": [
+      "error",
+      {
+        "destructuring": "any",
+        "ignoreReadBeforeAssign": false
+      }
     ]
   }
 }
