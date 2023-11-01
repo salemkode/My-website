@@ -36,7 +36,7 @@ const ProjectCard: React.FC<ProjectProps> = ({
     >
       <a className="flex" href={link} target="_blank">
         <Card className="mx-auto flex overflow-hidden md:min-w-[550px]">
-          <div className="group relative flex w-full flex-col-reverse">
+          <div className="group relative flex w-full flex-col-reverse md:flex-row">
             <div className="flex flex-col p-6 md:w-1/2">
               <h1 className="pb-4 text-2xl font-bold">{title}</h1>
               <p className="pb-4">{description}</p>
