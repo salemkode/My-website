@@ -56,7 +56,7 @@ const AboutSection: React.FC = () => {
   return (
     <div className="container flex w-full justify-center py-40">
       <div
-        className="relative mx-auto h-[300px] w-full rounded-xl border-2 py-8 font-display text-2xl sm:text-3xl md:text-5xl"
+        className="relative mx-auto h-[300px] w-full rounded-xl border-2 py-8 font-display text-2xl sm:text-3xl md:text-5xl  md:leading-snug"
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
         onPointerMove={handleMouseMove}
