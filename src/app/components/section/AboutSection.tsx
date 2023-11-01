@@ -79,7 +79,7 @@ const AboutSection: React.FC = () => {
         <Image
           alt="Show next message"
           className={cn(
-            "absolute bottom-8 left-1/2 z-30 w-10 -translate-x-1/2 translate-y-1/2 transform cursor-pointer hover:invert",
+            "absolute bottom-8 left-1/2 z-30 w-10 -translate-x-1/2 translate-y-1/2 transform cursor-pointer mix-blend-difference invert",
             {
               hidden: circleState === "fullContent",
             },
