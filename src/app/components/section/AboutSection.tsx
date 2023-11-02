@@ -17,7 +17,7 @@ const AboutSection: React.FC = () => {
     "hidden" as keyof typeof circleStates,
   );
 
-  const handleMouseMove = (ev: React.PointerEvent<HTMLDivElement>) => {
+  const moveCircle = (ev: React.PointerEvent<HTMLDivElement>) => {
     if (!containerRef.current) return;
     const rect = ev.currentTarget.getBoundingClientRect();
     const { width, height } = containerRef.current.getBoundingClientRect();
@@ -31,6 +31,12 @@ const AboutSection: React.FC = () => {
       duration: 0.1,
       ease: "sine.out",
     });
+  };
+
+  const handleMouseMove = (ev: React.PointerEvent<HTMLDivElement>) => {
+    if (circleState === "moving" && ev.pointerType === "mouse") {
+      moveCircle(ev);
+    }
   };
 
   const handleMouseEnter = () => {
