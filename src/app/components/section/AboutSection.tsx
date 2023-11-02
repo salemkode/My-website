@@ -47,14 +47,15 @@ const AboutSection: React.FC = () => {
     if (circleState === "moving") setCircleState("hidden");
   };
 
-  const handleOverlayClick = () => {
+  const handleOverlayClick = (ev: React.PointerEvent<HTMLDivElement>) => {
     if (circleState === "fullContent") setCircleState("moving");
+    moveCircle(ev);
   };
 
   useEffect(() => {
     gsap.to(containerRef.current, {
       "--size": circleStates[circleState],
-      duration: circleState === "hidden" ? 0.2 : 0.5,
+      duration: circleState === "hidden" ? 0.1 : 0.5,
       ease: "sine.out",
     });
   }, [circleState]);
