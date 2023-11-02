@@ -33,8 +33,8 @@ const NavBarAccounts = () => {
       {accounts.map(({ name, icon, url }) => {
         return (
           <li
-            className="mx-1 block rounded-full border border-primary p-1.5 transition hover:bg-[#21242926] "
             key={name}
+            className="mx-1 block rounded-full border border-primary p-1.5 transition hover:bg-[#21242926] "
           >
             <a href={url} target="_blank">
               <Image

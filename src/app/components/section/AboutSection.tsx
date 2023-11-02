@@ -63,11 +63,11 @@ const AboutSection: React.FC = () => {
   return (
     <div className="container flex w-full justify-center py-40">
       <div
+        ref={containerRef}
         className="relative mx-auto h-[300px] w-full rounded-xl border-2 py-8 font-display text-2xl sm:text-3xl md:text-5xl  md:leading-snug"
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
         onPointerMove={handleMouseMove}
-        ref={containerRef}
       >
         <p className="absolute inset-0 z-10 flex flex-col justify-center px-6 md:px-12">
           <b>Creating digital</b>
@@ -75,10 +75,10 @@ const AboutSection: React.FC = () => {
         </p>
         <p
           className="absolute inset-0 z-20 flex flex-col justify-center rounded-xl bg-primary px-6 text-white transition-all duration-200 ease-linear md:px-12"
-          onClick={handleOverlayClick}
           style={{
             clipPath: `circle(var(--size, 0px) at var(--x, 50%) var(--y, 50%))`,
           }}
+          onClick={handleOverlayClick}
         >
           <b>Code as art,</b>
           where every line matters.
@@ -91,12 +91,12 @@ const AboutSection: React.FC = () => {
               hidden: circleState === "fullContent",
             },
           )}
+          src={NextArrow}
           onClick={() => {
             if (!containerRef.current) return;
             setCircleState("fullContent");
             containerRef.current.style.transitionDuration = "2s";
           }}
-          src={NextArrow}
         />
       </div>
     </div>

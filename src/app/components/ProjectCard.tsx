@@ -27,8 +27,8 @@ const ProjectCard: React.FC<ProjectProps> = ({
   });
   return (
     <motion.div
-      className={twMerge("mx-auto flex", className)}
       ref={target}
+      className={twMerge("mx-auto flex", className)}
       style={{
         scale: scrollYProgress,
         opacity: scrollYProgress,
@@ -42,7 +42,7 @@ const ProjectCard: React.FC<ProjectProps> = ({
               <p className="pb-4">{description}</p>
               <div className="mt-auto flex flex-wrap gap-2">
                 {tags.map((tag) => (
-                  <Card className="border-primary p-1 px-3 text-sm" key={tag}>
+                  <Card key={tag} className="border-primary p-1 px-3 text-sm">
                     {tag}
                   </Card>
                 ))}

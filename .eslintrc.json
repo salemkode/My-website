@@ -11,7 +11,14 @@
       "error"
     ],
     "react/jsx-sort-props": [
-      "error"
+      "error",
+      {
+        "callbacksLast": true,
+        "shorthandFirst": true,
+        "ignoreCase": true,
+        "noSortAlphabetically": false,
+        "reservedFirst": true
+      }
     ],
     "prefer-const": [
       "error",

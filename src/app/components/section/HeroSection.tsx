@@ -63,8 +63,8 @@ const HeroSection = () => {
 
   return (
     <section
-      className="container relative flex h-screen flex-col-reverse items-center justify-center md:flex-row"
       ref={sectionRef}
+      className="container relative flex h-screen flex-col-reverse items-center justify-center md:flex-row"
     >
       <div
         className="clip absolute left-1/2 top-1/2 -z-10 h-2/5 w-full -translate-x-1/2 -translate-y-1/2 -rotate-12 rounded-xl blur-3xl"
