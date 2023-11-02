@@ -5,9 +5,45 @@ import MouseIcon from "../MouseIcon";
 import AvatarImage from "@/assets/images/avatar.png";
 import HandIcon from "@/assets/images/hand.png";
 import TelegramIcon from "@assets/images/accounts/telegram.svg";
+import gsap from "gsap";
 import Image from "next/image";
 import React, { useRef } from "react";
 import { twMerge } from "tailwind-merge";
+
+const HalloEmoji = () => {
+  const emojiRef = useRef<HTMLImageElement>(null);
+
+  const handleOverlay = () => {
+    const from = {
+      rotate: 0,
+      duration: 0.2,
+      ease: "linear",
+    };
+    const to = {
+      rotate: 25,
+      duration: 0.2,
+      ease: "linear",
+    };
+    gsap
+      .timeline({
+        repeat: 3,
+      })
+      .to(emojiRef.current, to)
+      .to(emojiRef.current, from);
+  };
+
+  return (
+    <Image
+      ref={emojiRef}
+      alt="Hand emoji icon for hi"
+      className="w-[25px] transition-[rotate] sm:w-[35px] md:w-[40px]"
+      height={40}
+      src={HandIcon.src}
+      width={40}
+      onMouseEnter={handleOverlay}
+    />
+  );
+};
 
 interface HeroSectionInfoProps {
   className?: string;
@@ -19,13 +55,7 @@ const HeroSectionInfo: React.FC<HeroSectionInfoProps> = ({ className }) => {
     >
       <p className="my-1 flex items-center gap-1">
         <span>Hi,</span>
-        <Image
-          alt="Hand icon for hi"
-          className="w-[25px] sm:w-[35px] md:w-[40px]"
-          height={40}
-          src={HandIcon.src}
-          width={40}
-        />
+        <HalloEmoji />
       </p>
       <p className="my-3">
         I&apos;m
