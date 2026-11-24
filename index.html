@@ -1,0 +1,359 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Salem Shamakh · salemkode</title>
+<meta name="description" content="Salem Shamakh builds Bitcoin Cash apps whose rules live on the chain. His work, drawn as the tower city of Shibam: each tower is a project, each floor is one thing it does.">
+<meta name="theme-color" content="#114c96">
+<link rel="canonical" href="https://salemkode.com/">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://salemkode.com/">
+<meta property="og:title" content="Salem Shamakh · salemkode">
+<meta property="og:description" content="Bitcoin Cash apps whose rules live on the chain, drawn as the tower city of Shibam.">
+<meta property="og:image" content="https://salemkode.com/preview.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@salemkode">
+<link rel="preload" href="fonts/handjet-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/readexpro-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="styles.css">
+<script>document.documentElement.classList.add('js')</script>
+</head>
+<body>
+<a class="skip" href="#sky">Skip to the text</a>
+
+<div class="stage" id="stage">
+  <div class="heavens" id="heavens" aria-hidden="true"></div>
+  <div class="veil" aria-hidden="true"></div>
+  <div class="orbit">
+    <div class="orb" id="orb" role="slider" tabindex="0"
+         aria-label="Hour in Shibam. Drag the sun, or use the arrow keys."
+         aria-valuemin="0" aria-valuemax="1439" aria-valuenow="720" aria-valuetext="12:00 in Shibam"></div>
+  </div>
+
+  <header class="top">
+    <a class="mark" href="#intro">salemkode</a>
+    <nav class="elsewhere" aria-label="Elsewhere">
+      <a href="https://github.com/salemkode">GitHub</a>
+      <a href="https://x.com/salemkode">X</a>
+      <a href="https://t.me/salemkode">Telegram</a>
+      <a href="mailto:hello@salemkode.com">Email</a>
+    </nav>
+  </header>
+
+  <main class="sky" id="sky">
+
+    <article class="plot plot--intro is-open" id="intro">
+      <div class="plot-head">
+        <h1 class="plot-name">Salem Shamakh</h1>
+        <p class="plot-what">I build Bitcoin Cash apps whose rules live on the chain, not on a server I could change. A wallet that holds a household to what it agreed. A focus timer that pays in trees. The libraries that let all of it run on a phone.</p>
+        <p class="doors">
+          <a class="door" href="#focus-garden">Start at the tallest tower</a>
+          <a class="door door--plain" href="mailto:hello@salemkode.com">Write to me</a>
+        </p>
+      </div>
+      <div class="plot-side">
+        <p class="label">How to read this drawing</p>
+        <ul class="key">
+          <li>Each tower is a project. Each floor is one thing it does.</li>
+          <li><span class="swatch swatch--live" aria-hidden="true"></span>A whitewashed top means it is ready to use.</li>
+          <li><span class="swatch swatch--mud" aria-hidden="true"></span>Bare mud and scaffolding mean it is still being built.</li>
+          <li>The light is the real hour in Shibam, Hadhramaut. Drag the sun or the moon to change it.</li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="plot" id="venn" data-live data-cols="4">
+      <div class="plot-head">
+        <h2 class="plot-name">Venn</h2>
+        <p class="plot-what">A Bitcoin Cash wallet for money people share. Before joining a fund, each member sees what they may spend alone and what power they hand to the others. The chain holds everyone to it.</p>
+        <p class="plot-state"><span class="state state--live">Ready to use</span> Live on mainnet. Solo entry in BCH BLAZE 2026.</p>
+        <p class="doors">
+          <a class="door" href="https://venn.salemkode.com/">Open Venn</a>
+          <a class="door door--plain" href="https://github.com/salemkode/venn-blaze-2026">Read the source</a>
+        </p>
+      </div>
+      <div class="plot-side">
+        <p class="label">Floors</p>
+        <ol class="floors" reversed>
+          <li>Savings Circles with a fixed turn order and contribution</li>
+          <li>Lost-phone recovery by the helpers you chose</li>
+          <li>Group votes for larger payments, shared as codes</li>
+          <li>A budget each member can spend alone</li>
+          <li>Seats accepted with each member's own signature</li>
+          <li>Invitations that show the rules before you join</li>
+        </ol>
+        <p class="ground"><span class="ground-mark">G</span>Expo · libauth · XO · CashTokens</p>
+      </div>
+    </article>
+
+    <article class="plot" id="focus-garden" data-live data-cols="5">
+      <div class="plot-head">
+        <h2 class="plot-name">Focus Garden</h2>
+        <p class="plot-what">A focus timer that grows a tree while you stay off your phone. Leave the app and the tree withers. Finish, and the tree is locked on Bitcoin Cash, then sent to your wallet to keep.</p>
+        <p class="plot-state"><span class="state state--live">Ready to use</span> Contracts live on mainnet. BCH BLAZE 2026 entry, rebuilt from the 2025 hackathon project.</p>
+        <p class="doors">
+          <a class="door" href="https://focus-app.salemkode.com/">Open the app</a>
+          <a class="door door--plain" href="https://focus.salemkode.com/">See how it works</a>
+          <a class="door door--plain" href="https://github.com/salemkode/focus-garden-next">Read the source</a>
+        </p>
+      </div>
+      <div class="plot-side">
+        <p class="label">Floors</p>
+        <ol class="floors" reversed>
+          <li>A leaderboard, public profile cards and tips</li>
+          <li>Your own wallet: Selene, Paytaca, WalletConnect or WizardConnect</li>
+          <li>Small trees merge into bigger ones, up to a house</li>
+          <li>A time lock on chain holds each tree for the full session</li>
+          <li>Screen Time and usage access block the apps you choose</li>
+          <li>A voxel valley drawn natively on iOS, Android and web</li>
+          <li>Plant a tree, stay with it, and it grows</li>
+        </ol>
+        <p class="ground"><span class="ground-mark">G</span>Expo · React Native · CashScript · CashTokens</p>
+      </div>
+    </article>
+
+    <article class="plot" id="explorer" data-live data-cols="4">
+      <div class="plot-head">
+        <h2 class="plot-name">Explorer</h2>
+        <p class="plot-what">A block explorer for Bitcoin Cash that understands CashTokens. Running since 2023, now on Nuxt 4, and still the place I check my own transactions.</p>
+        <p class="plot-state"><span class="state state--live">Ready to use</span> Live at explorer.salemkode.com.</p>
+        <p class="doors">
+          <a class="door" href="https://explorer.salemkode.com/">Open the explorer</a>
+          <a class="door door--plain" href="https://github.com/salemkode/explorer">Read the source</a>
+        </p>
+      </div>
+      <div class="plot-side">
+        <p class="label">Floors</p>
+        <ol class="floors" reversed>
+          <li>Pick your own data server, with a live check of each one</li>
+          <li>Transaction analytics</li>
+          <li>Address tools</li>
+          <li>CashTokens, read through the IPFS gateway you choose</li>
+          <li>Blocks, transactions and the mempool</li>
+        </ol>
+        <p class="ground"><span class="ground-mark">G</span>Nuxt 4 · Vue · Chaingraph · Bun</p>
+      </div>
+    </article>
+
+    <article class="plot" id="blaze" data-cols="4">
+      <div class="plot-head">
+        <h2 class="plot-name">Blaze</h2>
+        <p class="plot-what">A CashTokens indexer to sit behind the explorer: one BCHN node, SQLite and a small REST API. No Chaingraph, Hasura or PostgreSQL to keep alive.</p>
+        <p class="plot-state"><span class="state">Still being built</span> Installs on Linux. No public endpoint yet.</p>
+        <p class="doors">
+          <a class="door" href="https://github.com/salemkode/cashtokens-indexer">Read the source</a>
+        </p>
+      </div>
+      <div class="plot-side">
+        <p class="label">Floors</p>
+        <ol class="floors" reversed>
+          <li>Backup, and a clean stop and resume every day</li>
+          <li>Hints for finding a token's BCMR authchain</li>
+          <li>Token, block, transaction and mempool data over REST</li>
+          <li>One install command for mainnet and Chipnet</li>
+        </ol>
+        <p class="ground"><span class="ground-mark">G</span>TypeScript · BCHN · SQLite · Docker</p>
+      </div>
+    </article>
+
+    <article class="plot" id="react-native-libauth" data-live data-cols="3">
+      <div class="plot-head">
+        <h2 class="plot-name">React Native libauth</h2>
+        <p class="plot-what">The real @bitauth/libauth inside a React Native app. A small adapter compiles its crypto to native C and JSI, so the functions and types still come from libauth itself.</p>
+        <p class="plot-state"><span class="state state--live">Ready to use</span> Released as v0.2.1.</p>
+        <p class="doors">
+          <a class="door" href="https://github.com/salemkode/react-native-libauth">Read the source</a>
+        </p>
+      </div>
+      <div class="plot-side">
+        <p class="label">Floors</p>
+        <ol class="floors" reversed>
+          <li>react-native-xo, a wallet core on real XO primitives</li>
+          <li>Reproducible builds and a test app</li>
+          <li>Libauth 3.0.0 and 3.1.0-next.8 on React Native 0.81</li>
+          <li>Native C and JSI crypto generated from upstream libauth</li>
+        </ol>
+        <p class="ground"><span class="ground-mark">G</span>C · JSI · wasm2c · Hermes</p>
+      </div>
+    </article>
+
+    <article class="plot" id="expo-libauth" data-cols="3">
+      <div class="plot-head">
+        <h2 class="plot-name">Expo libauth</h2>
+        <p class="plot-what">Libauth v3 for Expo with one API everywhere: upstream WebAssembly in the browser, synchronous native cryptography on iOS and Android.</p>
+        <p class="plot-state"><span class="state">Still being built</span> Source is public. Not on npm yet.</p>
+        <p class="doors">
+          <a class="door" href="https://github.com/salemkode/expo-libauth">Read the source</a>
+        </p>
+      </div>
+      <div class="plot-side">
+        <p class="label">Floors</p>
+        <ol class="floors" reversed>
+          <li>Addresses, HD keys, transactions and CashTokens keep the upstream API</li>
+          <li>Synchronous native crypto on iOS and Android</li>
+          <li>Upstream WebAssembly on the web</li>
+        </ol>
+        <p class="ground"><span class="ground-mark">G</span>C++ · Expo Modules</p>
+      </div>
+    </article>
+
+    <article class="plot" id="xo-wallet" data-live data-cols="3">
+      <div class="plot-head">
+        <h2 class="plot-name">XO Wallet</h2>
+        <p class="plot-what">A small Bitcoin Cash wallet you can run, understand, and turn into your own app. It is a starting point, so it does three things and stops.</p>
+        <p class="plot-state"><span class="state state--live">Ready to use</span> Open template. Starts on Chipnet with test coins.</p>
+        <p class="doors">
+          <a class="door" href="https://github.com/salemkode/xo-react-native-wallet">Read the source</a>
+        </p>
+      </div>
+      <div class="plot-side">
+        <p class="label">Floors</p>
+        <ol class="floors" reversed>
+          <li>Switch between Chipnet and Mainnet in Settings</li>
+          <li>Receive with a QR code</li>
+          <li>Send BCH</li>
+        </ol>
+        <p class="ground"><span class="ground-mark">G</span>React Native 0.81 · XO primitives · native libauth</p>
+      </div>
+    </article>
+
+    <article class="plot" id="chat" data-cols="3">
+      <div class="plot-head">
+        <h2 class="plot-name">Chat</h2>
+        <p class="plot-what">An AI chat for web and phone that remembers what matters about you, each thread and each project, and lets you read back when you are offline.</p>
+        <p class="plot-state"><span class="state">Still being built</span> Source is public. Not hosted right now.</p>
+        <p class="doors">
+          <a class="door" href="https://github.com/salemkode/chat">Read the source</a>
+        </p>
+      </div>
+      <div class="plot-side">
+        <p class="label">Floors</p>
+        <ol class="floors" reversed>
+          <li>Memory for the user, the thread and the project</li>
+          <li>Offline read-back on each platform</li>
+          <li>Models and providers managed by an admin</li>
+          <li>A web client and an Expo phone app on one backend</li>
+        </ol>
+        <p class="ground"><span class="ground-mark">G</span>Convex · Clerk · Expo · React Router</p>
+      </div>
+    </article>
+
+    <article class="plot" id="hafil" data-live data-cols="3">
+      <div class="plot-head">
+        <h2 class="plot-name">Hafil</h2>
+        <p class="plot-what">The memorial site for the 2026 graduation of the BrainWare and Cyber-X classes at Seiyun University's Faculty of Computing. One static page in Arabic, with nothing behind it to break.</p>
+        <p class="plot-state"><span class="state state--live">Ready to use</span> Live at cs-is.salemkode.com.</p>
+        <p class="doors">
+          <a class="door" href="https://cs-is.salemkode.com/">Open the site</a>
+          <a class="door door--plain" href="https://github.com/salemkode/hafil">Read the source</a>
+        </p>
+      </div>
+      <div class="plot-side">
+        <p class="label">Floors</p>
+        <ol class="floors" reversed>
+          <li>A wall of 50 congratulations kept from the day</li>
+          <li>The 22 sponsors, by tier</li>
+          <li>A directory of 53 graduates with instant Arabic search</li>
+          <li>A button that fires confetti</li>
+        </ol>
+        <p class="ground"><span class="ground-mark">G</span>React · Vite · Tailwind · Cloudflare Workers</p>
+      </div>
+    </article>
+
+    <article class="plot" id="snapcraft" data-live data-old data-cols="3">
+      <div class="plot-head">
+        <h2 class="plot-name">Snapcraft Downloader</h2>
+        <p class="plot-what">A web page that hands you the package file for an app on the Snap Store, for machines that cannot reach the store themselves.</p>
+        <p class="plot-state"><span class="state state--live">Ready to use</span> From the old quarter. Still standing.</p>
+        <p class="doors">
+          <a class="door" href="https://snap.salemkode.com/">Open the downloader</a>
+        </p>
+      </div>
+      <div class="plot-side">
+        <p class="label">Floors</p>
+        <ol class="floors" reversed>
+          <li>Download the package file</li>
+          <li>Find an app by name</li>
+        </ol>
+        <p class="ground"><span class="ground-mark">G</span>React · Bootstrap</p>
+      </div>
+    </article>
+
+    <article class="plot" id="faststarter" data-live data-old data-cols="4">
+      <div class="plot-head">
+        <h2 class="plot-name">FastStarter</h2>
+        <p class="plot-what">Crowdfunding in the manner of Flipstarter, with the pledges held by a smart contract instead of a promise.</p>
+        <p class="plot-state"><span class="state state--live">Ready to use</span> From the old quarter. Still standing.</p>
+        <p class="doors">
+          <a class="door" href="https://faststarter.salemkode.com/">Open FastStarter</a>
+        </p>
+      </div>
+      <div class="plot-side">
+        <p class="label">Floors</p>
+        <ol class="floors" reversed>
+          <li>Connect a wallet and pledge</li>
+          <li>A campaign page with a funding goal</li>
+        </ol>
+        <p class="ground"><span class="ground-mark">G</span>Vue · Solidity</p>
+      </div>
+    </article>
+
+  </main>
+
+  <div class="city" id="city">
+    <div class="city-inner" id="city-inner">
+      <svg class="scene" id="scene" aria-hidden="true" focusable="false"></svg>
+      <nav class="plates" id="plates" aria-label="Projects, west to east">
+        <a href="#chat">Chat</a>
+        <a href="#xo-wallet">XO Wallet</a>
+        <a href="#react-native-libauth">RN libauth</a>
+        <a href="#venn">Venn</a>
+        <a href="#focus-garden">Focus Garden</a>
+        <a href="#explorer">Explorer</a>
+        <a href="#blaze">Blaze</a>
+        <a href="#expo-libauth">Expo libauth</a>
+        <a href="#hafil">Hafil</a>
+        <a href="#snapcraft">Snapcraft</a>
+        <a href="#faststarter">FastStarter</a>
+      </nav>
+    </div>
+  </div>
+</div>
+
+<footer class="titleblock">
+  <dl class="cells">
+    <div class="cell">
+      <dt>Place</dt>
+      <dd><span lang="ar" dir="rtl" class="ar">شبام حضرموت</span> Shibam, Hadhramaut</dd>
+    </div>
+    <div class="cell">
+      <dt>Hour</dt>
+      <dd><span id="hour">Noon</span> <button class="now" id="now" type="button" hidden>Back to now</button></dd>
+    </div>
+    <div class="cell">
+      <dt>Dated</dt>
+      <dd id="dated">2026</dd>
+    </div>
+    <div class="cell">
+      <dt>Your visit</dt>
+      <dd id="visit">A palm for every minute you stay</dd>
+    </div>
+    <div class="cell">
+      <dt>Sheet</dt>
+      <dd>1 of 1</dd>
+    </div>
+    <div class="cell cell--links">
+      <dt>Reach me</dt>
+      <dd>
+        <a href="mailto:hello@salemkode.com">hello@salemkode.com</a>
+        <a href="https://gitlab.com/salemkode">GitLab</a>
+      </dd>
+    </div>
+  </dl>
+</footer>
+
+<script src="main.js" defer></script>
+</body>
+</html>
