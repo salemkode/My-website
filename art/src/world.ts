@@ -383,36 +383,44 @@ function start(canvas: HTMLCanvasElement) {
 			}
 		}
 		if (moving) renderer.shadowMap.needsUpdate = true;
-		for (const cloud of clouds) {
-			cloud.position.x += cloud.userData.speed * dt;
-			if (cloud.position.x > 360) cloud.position.x = -360;
-		}
-		islets.forEach((islet, i) => {
-			islet.position.y += Math.sin(t * 0.4 + i * 1.7) * 0.01;
-		});
-		lamp.rotation.y = t * 0.5;
-		marker.position.y = 27 + Math.sin(t * 2.2) * 0.8;
-		marker.rotation.y = t * 1.2;
-		falls.forEach((pair) => {
+
+		// Decoration only moves for visitors who have not asked for reduced motion (or ?still).
+		// In the still mode everything holds one pose: the tree fully grown, the marker resting.
+		if (still) {
+			marker.position.y = 27;
+			grow(1);
+		} else {
+			for (const cloud of clouds) {
+				cloud.position.x += cloud.userData.speed * dt;
+				if (cloud.position.x > 360) cloud.position.x = -360;
+			}
+			islets.forEach((islet, i) => {
+				islet.position.y += Math.sin(t * 0.4 + i * 1.7) * 0.01;
+			});
+			lamp.rotation.y = t * 0.5;
+			marker.position.y = 27 + Math.sin(t * 2.2) * 0.8;
+			marker.rotation.y = t * 1.2;
 			const flip = Math.floor(t * 5) % 2;
-			pair[0].visible = flip === 0;
-			pair[1].visible = flip === 1;
-		});
+			falls.forEach((pair) => {
+				pair[0].visible = flip === 0;
+				pair[1].visible = flip === 1;
+			});
 
-		// A session's worth of growing takes about half a minute here, then the next tree starts.
-		const cycle = (t % 40) / 40;
-		const round = Math.floor(t / 40);
-		if (round !== growth.species) growth = { species: round, progress: 0, shown: -1 };
-		grow(still ? 1 : Math.min(1, cycle / 0.78));
+			// A session's worth of growing takes about half a minute here, then the next tree starts.
+			const cycle = (t % 40) / 40;
+			const round = Math.floor(t / 40);
+			if (round !== growth.species) growth = { species: round, progress: 0, shown: -1 };
+			grow(Math.min(1, cycle / 0.78));
 
-		const at = speckGeometry.getAttribute("position") as THREE.BufferAttribute;
-		for (let i = 0; i < SPECKS; i++) {
-			let y = at.getY(i) - dt * (2 + (i % 5));
-			if (y < -70) y = 160;
-			at.setY(i, y);
-			at.setX(i, at.getX(i) + Math.sin(t * 0.6 + i) * dt * 2);
+			const at = speckGeometry.getAttribute("position") as THREE.BufferAttribute;
+			for (let i = 0; i < SPECKS; i++) {
+				let y = at.getY(i) - dt * (2 + (i % 5));
+				if (y < -70) y = 160;
+				at.setY(i, y);
+				at.setX(i, at.getX(i) + Math.sin(t * 0.6 + i) * dt * 2);
+			}
+			at.needsUpdate = true;
 		}
-		at.needsUpdate = true;
 
 		renderer.render(scene, camera);
 		pin();
