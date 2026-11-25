@@ -29,7 +29,7 @@ jobs:
       - name: Collect the site
         run: |
           mkdir _site
-          cp -r index.html styles.css world.js favicon.svg preview.png fonts _site/
+          cp -r index.html styles.css favicon.svg preview.png fonts images _site/
           touch _site/.nojekyll
 
       - name: Upload artifact

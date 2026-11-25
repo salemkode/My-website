@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Draw one place</title>
+  <style>
+    html, body { height: 100%; margin: 0; background: transparent; }
+    #world { position: fixed; inset: 0; width: 100%; height: 100%; }
+    a { position: fixed; left: 12px; bottom: 12px; padding: 8px 14px; border-radius: 99px; background: #2a2118; color: #fff; font: 500 14px system-ui; text-decoration: none; }
+  </style>
+</head>
+<body>
+<!-- Add ?only=focus-garden (or venn, shibam, explorer, snapcraft, faststarter, cloud-41) to the address.
+     The place is drawn alone on a clear background; the button saves it as a PNG. -->
+<canvas id="world"></canvas>
+<a id="save" download="place.png" href="#">Save this picture</a>
+<script type="module">
+  await import('./world.js');
+  const save = document.querySelector('#save');
+  save.addEventListener('click', () => { save.href = window.salemkode.png(); });
+</script>
+</body>
+</html>

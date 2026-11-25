@@ -1,5 +1,7 @@
-// salemkode.com: a small sky of floating voxel islands, one for each thing I made.
-// Drawn with Focus Garden's own voxel engine (src/garden), so the world is in that app's hand.
+// The artwork for salemkode.com: floating voxel islands, one for each thing I made.
+// Drawn with Focus Garden's own voxel engine (src/garden), so the pictures are in that app's hand.
+// The site itself ships no 3D code. This scene exists to be photographed: open render.html?only=<place>
+// and each place is drawn alone on a clear background (see render.sh).
 import * as THREE from "three";
 import { buildBalloon, buildCloud, buildIsland, buildIslet, buildMarker } from "./garden/models";
 import { buildGrowthModel, buildTierModel, type SpeciesKey, type Tier } from "./garden/tiers";
@@ -21,8 +23,10 @@ interface Place {
 
 const canvas = document.querySelector<HTMLCanvasElement>("#world");
 const root = document.documentElement;
-const still =
-	matchMedia("(prefers-reduced-motion: reduce)").matches || /[?&]still\b/.test(location.search);
+const query = new URLSearchParams(location.search);
+/** Draw one place alone, for a picture. */
+const only = query.get("only");
+const still = Boolean(only) || matchMedia("(prefers-reduced-motion: reduce)").matches || query.has("still");
 
 function start(canvas: HTMLCanvasElement) {
 	const small = Math.min(innerWidth, innerHeight) < 600;
@@ -31,7 +35,7 @@ function start(canvas: HTMLCanvasElement) {
 		antialias: true,
 		alpha: true,
 		powerPreference: "high-performance",
-		preserveDrawingBuffer: /[?&]still\b/.test(location.search),
+		preserveDrawingBuffer: still,
 	});
 	renderer.setPixelRatio(Math.min(small ? 1.75 : 2, devicePixelRatio));
 	renderer.toneMapping = THREE.ACESFilmicToneMapping;
@@ -184,8 +188,12 @@ function start(canvas: HTMLCanvasElement) {
 		p.group.add(meshOf(buildBalloon(a, b, cap), false));
 		return p;
 	};
-	const snapcraft = balloon("snapcraft", 0xe95420, 0xf7f2e8, 0x7a3b1d);
-	const faststarter = balloon("faststarter", 0x2e6fd9, 0xffd23f, 0x1d3f7a);
+	balloon("snapcraft", 0xe95420, 0xf7f2e8, 0x7a3b1d);
+	balloon("faststarter", 0x2e6fd9, 0xffd23f, 0x1d3f7a);
+	for (const seed of only ? [41, 44, 46] : []) {
+		const cloud = place(`cloud-${seed}`, [0, 0, 0], { w: 34, h: 16, lift: 0 });
+		cloud.group.add(new THREE.Mesh(buildCloud(seed).toGeometry(), new THREE.MeshLambertMaterial({ vertexColors: true })));
+	}
 
 	/* ------------------------------------------------------------ scenery */
 
@@ -221,7 +229,14 @@ function start(canvas: HTMLCanvasElement) {
 	const speckGeometry = new THREE.BufferGeometry();
 	speckGeometry.setAttribute("position", new THREE.BufferAttribute(speckAt, 3));
 	speckGeometry.setAttribute("color", new THREE.BufferAttribute(speckTint, 3));
-	scene.add(new THREE.Points(speckGeometry, new THREE.PointsMaterial({ size: 1.3, vertexColors: true, transparent: true, opacity: 0.85 })));
+	const specks = new THREE.Points(speckGeometry, new THREE.PointsMaterial({ size: 1.3, vertexColors: true, transparent: true, opacity: 0.85 }));
+	scene.add(specks);
+	if (only) {
+		for (const thing of [...clouds, ...islets, specks]) thing.visible = false;
+		for (const p of places) p.group.visible = p.id === only;
+		lamp.visible = false;
+		scene.fog = null;
+	}
 
 	/* ------------------------------------------------- layout and camera */
 
@@ -262,7 +277,7 @@ function start(canvas: HTMLCanvasElement) {
 		renderer.setSize(width, height, false);
 		camera.aspect = width / height;
 		layout = camera.aspect < 0.85 ? LAYOUTS.tall : LAYOUTS.wide;
-		for (const p of places) p.group.position.set(...layout.at[p.id]).add(p.aside);
+		for (const p of places) p.group.position.set(...(layout.at[p.id] ?? [0, 0, 0])).add(p.aside);
 		sun.target.position.set(...layout.centre);
 		sun.position.set(layout.centre[0] - 170, layout.centre[1] + 260, layout.centre[2] + 190);
 		renderer.shadowMap.needsUpdate = true;
@@ -274,7 +289,12 @@ function start(canvas: HTMLCanvasElement) {
 		const p = places.find((x) => x.id === chosen);
 		const g = rig.goal;
 		const tall = layout === LAYOUTS.tall;
-		if (p) {
+		if (p && only) {
+			g.target.set(0, p.frame.lift, 0);
+			g.dist = fitDistance(p.frame.w, p.frame.h) * 1.5;
+			g.pitch = 0.46;
+			g.shift.set(0, 0);
+		} else if (p) {
 			g.target.set(...layout.at[p.id]).add(new THREE.Vector3(0, p.frame.lift, 0));
 			g.dist = fitDistance(p.frame.w, p.frame.h) * (tall ? 1.5 : 1.42);
 			g.pitch = 0.46;
@@ -346,9 +366,9 @@ function start(canvas: HTMLCanvasElement) {
 		const centre = places.find((p) => p.id === chosen);
 		let moving = false;
 		for (const p of places) {
-			const home = layout.at[p.id];
+			const home = only ? ([0, 0, 0] as Vec) : (layout.at[p.id] ?? [0, 0, 0]);
 			away.set(0, 0, 0);
-			if (centre && p !== centre) {
+			if (centre && p !== centre && !only) {
 				const from = layout.at[centre.id];
 				away.set(home[0] - from[0], (home[1] - from[1]) * 0.6, home[2] - from[2]).normalize().multiplyScalar(170);
 			}
@@ -469,7 +489,7 @@ function start(canvas: HTMLCanvasElement) {
 
 	/* ------------------------------------------------------------- start */
 
-	chosen = decodeURIComponent(location.hash.slice(1));
+	chosen = only ?? decodeURIComponent(location.hash.slice(1));
 	arrange();
 	choose(chosen);
 	aim(false);
@@ -489,6 +509,10 @@ function start(canvas: HTMLCanvasElement) {
 	(window as unknown as { salemkode: unknown }).salemkode = {
 		frame(seconds: number) {
 			for (let i = 0; i < 40; i++) frame(seconds, 0.05);
+		},
+		/** The current picture, with a clear background. */
+		png() {
+			return canvas.toDataURL("image/png");
 		},
 	};
 }

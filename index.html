@@ -4,124 +4,171 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Salem Shamakh · Software engineer</title>
-  <meta name="description" content="Salem Shamakh is a software engineer from Shibam, Hadhramaut. His work floats here as a small sky of islands: Focus Garden, Venn, and the things that came before.">
+  <meta name="description" content="Salem Shamakh is a software engineer who builds phone and web apps from the first sketch to release. Shipped in 2026: Focus Garden and Venn.">
   <meta name="theme-color" content="#ffd9b3">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://salemkode.com/">
   <meta property="og:title" content="Salem Shamakh · Software engineer">
-  <meta property="og:description" content="A small sky of islands, one for each thing I made.">
+  <meta property="og:description" content="I build phone and web apps from the first sketch to release. Shipped in 2026: Focus Garden and Venn.">
   <meta property="og:image" content="https://salemkode.com/preview.png">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="preload" href="fonts/handjet-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="fonts/readexpro-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="images/focus-garden.webp" as="image" type="image/webp">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+<a class="skip" href="#work">Skip to the work</a>
 
-<canvas id="world" aria-hidden="true"></canvas>
-
-<header class="me">
-  <a class="me-name" href="#home">
-    <h1>Salem Shamakh</h1>
-    <p>Software engineer</p>
-  </a>
-  <nav class="reach" aria-label="Contact">
-    <a href="https://github.com/salemkode">GitHub</a>
-    <a href="https://x.com/salemkode">X</a>
-    <a href="https://t.me/salemkode">Telegram</a>
-    <a href="mailto:hello@salemkode.com">Email</a>
+<header class="top">
+  <a class="top-name" href="#hello">Salem Shamakh</a>
+  <nav class="top-nav" aria-label="Sections">
+    <a href="#work">Work</a>
+    <a href="#about">About</a>
+    <a class="top-mail" href="mailto:hello@salemkode.com">Email me</a>
   </nav>
 </header>
 
-<nav class="places" aria-label="Places in this sky">
-  <a class="tag" href="#focus-garden" data-place="focus-garden">Focus Garden</a>
-  <a class="tag" href="#venn" data-place="venn">Venn</a>
-  <a class="tag" href="#shibam" data-place="shibam">Shibam</a>
-  <a class="tag" href="#explorer" data-place="explorer">Explorer</a>
-  <a class="tag tag--small" href="#snapcraft" data-place="snapcraft">Snapcraft Downloader</a>
-  <a class="tag tag--small" href="#faststarter" data-place="faststarter">FastStarter</a>
-</nav>
+<main>
 
-<main class="cards" aria-live="polite">
+  <section class="hello" id="hello">
+    <div class="hello-text">
+      <p class="eyebrow"><span class="dot" aria-hidden="true"></span>Software engineer · open to new work</p>
+      <h1>I build phone and web apps, from the first sketch to release.</h1>
+      <p class="lede">I'm Salem Shamakh. This year I shipped two apps, Focus Garden and Venn. Each one runs on iOS, Android and the web from a single codebase, and each one handles real money.</p>
+      <p class="doors">
+        <a class="door" href="mailto:hello@salemkode.com">Email me</a>
+        <a class="door door--plain" href="#work">See the work</a>
+      </p>
+      <p class="tools"><span>I work with</span> TypeScript, React Native and Expo, Vue and Nuxt, native modules in C and C++, and on-chain contracts.</p>
+    </div>
+    <div class="sky" aria-hidden="true">
+      <img class="sky-cloud sky-cloud--a" src="images/cloud-41.webp" alt="" width="480" height="175">
+      <img class="sky-cloud sky-cloud--b" src="images/cloud-44.webp" alt="" width="480" height="189">
+      <img class="sky-venn" src="images/venn.webp" alt="" width="860" height="629">
+      <img class="sky-balloon" src="images/snapcraft.webp" alt="" width="240" height="346">
+      <img class="sky-garden" src="images/focus-garden.webp" alt="" width="980" height="894" fetchpriority="high">
+    </div>
+  </section>
 
-  <article class="card" id="home">
-    <h2>Everything I made lives up here.</h2>
-    <p>I'm Salem, a software engineer. I build apps for the phone and the web. Each island in this sky is one of them.</p>
-    <p class="how">Pick an island, or drag the sky to look around.</p>
-  </article>
+  <section class="work" id="work">
+    <h2 class="section-title">Shipped in 2026</h2>
 
-  <article class="card" id="focus-garden">
-    <p class="kind">Phone app · 2026</p>
-    <h2>Focus Garden</h2>
-    <p>A focus timer that grows a tree while you stay off your phone. Leave the app and the tree withers. Finish, and the tree is yours to keep in your wallet.</p>
-    <p class="how">This whole sky is drawn the way Focus Garden draws its valley. The tree under the gold marker is growing right now.</p>
-    <p class="doors">
-      <a class="door" href="https://focus-app.salemkode.com/">Open the app</a>
-      <a class="door door--plain" href="https://focus.salemkode.com/">How it works</a>
-      <a class="door door--plain" href="https://github.com/salemkode/focus-garden-next">Source</a>
-    </p>
-    <a class="back" href="#home">Back to the whole sky</a>
-  </article>
+    <article class="case case--garden" id="focus-garden">
+      <div class="case-text">
+        <p class="kind">Phone app · iOS, Android and web</p>
+        <h3>Focus Garden</h3>
+        <p class="pitch">A focus timer that grows a tree while you stay off your phone. Leave the app and the tree withers. Finish, and the tree is locked on Bitcoin Cash, then sent to your wallet to keep.</p>
+        <h4>What is in it</h4>
+        <ul class="points">
+          <li>A voxel valley drawn natively on iOS, Android and the web</li>
+          <li>App blocking through Screen Time and Android usage access</li>
+          <li>A time lock on chain that holds each tree for the full session</li>
+          <li>Small trees that merge into bigger ones, up to a house</li>
+          <li>A leaderboard and public profile cards</li>
+        </ul>
+        <p class="stack">Expo · React Native · Three.js · CashScript</p>
+        <p class="doors">
+          <a class="door" href="https://focus-app.salemkode.com/">Open the app</a>
+          <a class="door door--plain" href="https://focus.salemkode.com/">How it works</a>
+          <a class="door door--plain" href="https://github.com/salemkode/focus-garden-next">Source</a>
+        </p>
+      </div>
+      <div class="screens screens--three">
+        <img src="images/focus-garden-timer.webp" alt="Focus Garden's home screen: a floating island with a 25-minute focus timer below it." width="482" height="1049" loading="lazy">
+        <img src="images/focus-garden-trees.webp" alt="Choosing a tree style: meadow oak, ridge pine, silver birch, blossom cherry." width="482" height="1049" loading="lazy">
+        <img src="images/focus-garden-merge.webp" alt="The merge workshop: three sprouts into a tree, two trees into a big tree, two big trees into a house." width="482" height="1049" loading="lazy">
+      </div>
+    </article>
 
-  <article class="card" id="venn">
-    <p class="kind">Phone app · 2026</p>
-    <h2>Venn</h2>
-    <p>A wallet for money people share. Before joining a fund, each member sees what they may spend alone and what power they hand to the others. Nobody can quietly change the rules later.</p>
-    <p class="how">Two circles of homes, and the shared money kept where they overlap.</p>
-    <p class="doors">
-      <a class="door" href="https://venn.salemkode.com/">Open Venn</a>
-      <a class="door door--plain" href="https://github.com/salemkode/venn-blaze-2026">Source</a>
-    </p>
-    <a class="back" href="#home">Back to the whole sky</a>
-  </article>
+    <article class="case case--venn" id="venn">
+      <div class="case-text">
+        <p class="kind">Phone app · iOS, Android and web</p>
+        <h3>Venn</h3>
+        <p class="pitch">A wallet for money people share. Before joining a fund, each member sees what they may spend alone and what power they hand to the others. The rules sit on chain, so nobody can quietly change them later.</p>
+        <h4>What is in it</h4>
+        <ul class="points">
+          <li>Invitations that show the rules before you join</li>
+          <li>A budget each member can spend alone</li>
+          <li>Group votes for larger payments</li>
+          <li>Lost-phone recovery by the helpers you chose</li>
+          <li>Savings circles with a fixed turn order</li>
+        </ul>
+        <p class="stack">Expo · React Native · libauth · CashTokens</p>
+        <p class="doors">
+          <a class="door" href="https://venn.salemkode.com/">Open Venn</a>
+          <a class="door door--plain" href="https://github.com/salemkode/venn-blaze-2026">Source</a>
+        </p>
+      </div>
+      <div class="screens screens--two">
+        <img src="images/venn-review.webp" alt="Reviewing a new Venn before sharing the invitation: name, type, money, people, and a plain statement of its weakness." width="482" height="1048" loading="lazy">
+        <img src="images/venn-join.webp" alt="Joining a shared Venn: the rules, its weakness, and which seat is yours." width="482" height="631" loading="lazy">
+        <img class="screens-art" src="images/venn.webp" alt="" width="860" height="629" loading="lazy">
+      </div>
+    </article>
+  </section>
 
-  <article class="card" id="shibam">
-    <p class="kind">Where I'm from</p>
-    <h2>Shibam <span class="ar" lang="ar" dir="rtl">شبام</span></h2>
-    <p>I'm from Shibam, in Hadhramaut, Yemen. Its houses are towers of mud brick with tops painted white, standing shoulder to shoulder above the date palms.</p>
-    <p class="doors">
-      <a class="door" href="mailto:hello@salemkode.com">hello@salemkode.com</a>
-      <a class="door door--plain" href="https://github.com/salemkode">GitHub</a>
-      <a class="door door--plain" href="https://t.me/salemkode">Telegram</a>
-    </p>
-    <a class="back" href="#home">Back to the whole sky</a>
-  </article>
+  <section class="earlier" id="earlier">
+    <h2 class="section-title">Earlier work, still running</h2>
+    <ul class="earlier-list">
+      <li>
+        <img src="images/explorer.webp" alt="" width="300" height="815" loading="lazy">
+        <div>
+          <p class="kind">Website · since 2023</p>
+          <h3>Explorer</h3>
+          <p>A block explorer for Bitcoin Cash that understands tokens. Now on Nuxt 4.</p>
+          <p class="links"><a href="https://explorer.salemkode.com/">Open it</a> <a href="https://github.com/salemkode/explorer">Source</a></p>
+        </div>
+      </li>
+      <li>
+        <img src="images/snapcraft.webp" alt="" width="240" height="346" loading="lazy">
+        <div>
+          <p class="kind">Website</p>
+          <h3>Snapcraft Downloader</h3>
+          <p>Hands you the package file of any Snap Store app, for machines that cannot reach the store.</p>
+          <p class="links"><a href="https://snap.salemkode.com/">Open it</a></p>
+        </div>
+      </li>
+      <li>
+        <img src="images/faststarter.webp" alt="" width="240" height="346" loading="lazy">
+        <div>
+          <p class="kind">Website</p>
+          <h3>FastStarter</h3>
+          <p>Crowdfunding where a smart contract holds the pledges instead of a promise.</p>
+          <p class="links"><a href="https://faststarter.salemkode.com/">Open it</a></p>
+        </div>
+      </li>
+    </ul>
+  </section>
 
-  <article class="card" id="explorer">
-    <p class="kind">Website · since 2023</p>
-    <h2>Explorer</h2>
-    <p>A block explorer for Bitcoin Cash that understands tokens. Look up any block, transaction or address, and choose which data server it reads from.</p>
-    <p class="how">A lighthouse, because an explorer is how you see what is out there.</p>
-    <p class="doors">
-      <a class="door" href="https://explorer.salemkode.com/">Open the explorer</a>
-      <a class="door door--plain" href="https://github.com/salemkode/explorer">Source</a>
-    </p>
-    <a class="back" href="#home">Back to the whole sky</a>
-  </article>
-
-  <article class="card" id="snapcraft">
-    <p class="kind">Website · earlier work</p>
-    <h2>Snapcraft Downloader</h2>
-    <p>Hands you the package file of any Snap Store app, for machines that cannot reach the store themselves.</p>
-    <p class="doors">
-      <a class="door" href="https://snap.salemkode.com/">Open it</a>
-    </p>
-    <a class="back" href="#home">Back to the whole sky</a>
-  </article>
-
-  <article class="card" id="faststarter">
-    <p class="kind">Website · earlier work</p>
-    <h2>FastStarter</h2>
-    <p>Crowdfunding where a smart contract holds the pledges instead of a promise.</p>
-    <p class="doors">
-      <a class="door" href="https://faststarter.salemkode.com/">Open it</a>
-    </p>
-    <a class="back" href="#home">Back to the whole sky</a>
-  </article>
+  <section class="about" id="about">
+    <div class="about-text">
+      <h2 class="section-title">About me</h2>
+      <p class="lede">I'm from Shibam, in Hadhramaut, Yemen: a town of mud-brick tower houses above the date palms. I work in English and Arabic.</p>
+      <h3>What you can hand me</h3>
+      <ul class="points">
+        <li>An app idea that has to reach the App Store, Google Play and the web</li>
+        <li>React Native or Expo work that needs native code underneath</li>
+        <li>A web app in Vue, Nuxt or React</li>
+        <li>Anything that moves money: wallets, signing, contracts on chain</li>
+      </ul>
+      <p class="note">The islands on this page are drawn with the voxel engine from Focus Garden, then saved as pictures, so the page stays light.</p>
+    </div>
+    <img class="about-art" src="images/shibam.webp" alt="A floating island with a cluster of tall mud-brick tower houses and date palms, drawn in voxels." width="700" height="868" loading="lazy">
+  </section>
 
 </main>
 
-<script type="module" src="world.js"></script>
+<footer class="reach" id="reach">
+  <h2>Have something to build?</h2>
+  <a class="reach-mail" href="mailto:hello@salemkode.com">hello@salemkode.com</a>
+  <nav class="reach-more" aria-label="Elsewhere">
+    <a href="https://github.com/salemkode">GitHub</a>
+    <a href="https://x.com/salemkode">X</a>
+    <a href="https://t.me/salemkode">Telegram</a>
+  </nav>
+</footer>
+
 </body>
 </html>
