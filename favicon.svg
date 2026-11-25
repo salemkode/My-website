@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" shape-rendering="crispEdges">
+  <rect width="16" height="16" rx="3" fill="#ffd9b3"/>
+  <!-- a floating island, one cube at a time -->
+  <rect x="7" y="2" width="3" height="3" fill="#4caf3f"/>
+  <rect x="6" y="3" width="5" height="2" fill="#5bbf4a"/>
+  <rect x="8" y="5" width="1" height="2" fill="#7a4a27"/>
+  <rect x="2" y="7" width="12" height="2" fill="#78c444"/>
+  <rect x="2" y="9" width="12" height="1" fill="#8b5a33"/>
+  <rect x="3" y="10" width="10" height="1" fill="#cf7f3a"/>
+  <rect x="4" y="11" width="8" height="1" fill="#b7702f"/>
+  <rect x="5" y="12" width="5" height="1" fill="#80502c"/>
+  <rect x="6" y="13" width="2" height="1" fill="#5c3a22"/>
+  <rect x="11" y="9" width="1" height="5" fill="#4fb0ea"/>
+</svg>

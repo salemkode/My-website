@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Salem Shamakh · Software engineer</title>
+  <meta name="description" content="Salem Shamakh is a software engineer from Shibam, Hadhramaut. His work floats here as a small sky of islands: Focus Garden, Venn, and the things that came before.">
+  <meta name="theme-color" content="#ffd9b3">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://salemkode.com/">
+  <meta property="og:title" content="Salem Shamakh · Software engineer">
+  <meta property="og:description" content="A small sky of islands, one for each thing I made.">
+  <meta property="og:image" content="https://salemkode.com/preview.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="fonts/handjet-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/readexpro-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<canvas id="world" aria-hidden="true"></canvas>
+
+<header class="me">
+  <a class="me-name" href="#home">
+    <h1>Salem Shamakh</h1>
+    <p>Software engineer</p>
+  </a>
+  <nav class="reach" aria-label="Contact">
+    <a href="https://github.com/salemkode">GitHub</a>
+    <a href="https://x.com/salemkode">X</a>
+    <a href="https://t.me/salemkode">Telegram</a>
+    <a href="mailto:hello@salemkode.com">Email</a>
+  </nav>
+</header>
+
+<nav class="places" aria-label="Places in this sky">
+  <a class="tag" href="#focus-garden" data-place="focus-garden">Focus Garden</a>
+  <a class="tag" href="#venn" data-place="venn">Venn</a>
+  <a class="tag" href="#shibam" data-place="shibam">Shibam</a>
+  <a class="tag" href="#explorer" data-place="explorer">Explorer</a>
+  <a class="tag tag--small" href="#snapcraft" data-place="snapcraft">Snapcraft Downloader</a>
+  <a class="tag tag--small" href="#faststarter" data-place="faststarter">FastStarter</a>
+</nav>
+
+<main class="cards" aria-live="polite">
+
+  <article class="card" id="home">
+    <h2>Everything I made lives up here.</h2>
+    <p>I'm Salem, a software engineer. I build apps for the phone and the web. Each island in this sky is one of them.</p>
+    <p class="how">Pick an island, or drag the sky to look around.</p>
+  </article>
+
+  <article class="card" id="focus-garden">
+    <p class="kind">Phone app · 2026</p>
+    <h2>Focus Garden</h2>
+    <p>A focus timer that grows a tree while you stay off your phone. Leave the app and the tree withers. Finish, and the tree is yours to keep in your wallet.</p>
+    <p class="how">This whole sky is drawn the way Focus Garden draws its valley. The tree under the gold marker is growing right now.</p>
+    <p class="doors">
+      <a class="door" href="https://focus-app.salemkode.com/">Open the app</a>
+      <a class="door door--plain" href="https://focus.salemkode.com/">How it works</a>
+      <a class="door door--plain" href="https://github.com/salemkode/focus-garden-next">Source</a>
+    </p>
+    <a class="back" href="#home">Back to the whole sky</a>
+  </article>
+
+  <article class="card" id="venn">
+    <p class="kind">Phone app · 2026</p>
+    <h2>Venn</h2>
+    <p>A wallet for money people share. Before joining a fund, each member sees what they may spend alone and what power they hand to the others. Nobody can quietly change the rules later.</p>
+    <p class="how">Two circles of homes, and the shared money kept where they overlap.</p>
+    <p class="doors">
+      <a class="door" href="https://venn.salemkode.com/">Open Venn</a>
+      <a class="door door--plain" href="https://github.com/salemkode/venn-blaze-2026">Source</a>
+    </p>
+    <a class="back" href="#home">Back to the whole sky</a>
+  </article>
+
+  <article class="card" id="shibam">
+    <p class="kind">Where I'm from</p>
+    <h2>Shibam <span class="ar" lang="ar" dir="rtl">شبام</span></h2>
+    <p>I'm from Shibam, in Hadhramaut, Yemen. Its houses are towers of mud brick with tops painted white, standing shoulder to shoulder above the date palms.</p>
+    <p class="doors">
+      <a class="door" href="mailto:hello@salemkode.com">hello@salemkode.com</a>
+      <a class="door door--plain" href="https://github.com/salemkode">GitHub</a>
+      <a class="door door--plain" href="https://t.me/salemkode">Telegram</a>
+    </p>
+    <a class="back" href="#home">Back to the whole sky</a>
+  </article>
+
+  <article class="card" id="explorer">
+    <p class="kind">Website · since 2023</p>
+    <h2>Explorer</h2>
+    <p>A block explorer for Bitcoin Cash that understands tokens. Look up any block, transaction or address, and choose which data server it reads from.</p>
+    <p class="how">A lighthouse, because an explorer is how you see what is out there.</p>
+    <p class="doors">
+      <a class="door" href="https://explorer.salemkode.com/">Open the explorer</a>
+      <a class="door door--plain" href="https://github.com/salemkode/explorer">Source</a>
+    </p>
+    <a class="back" href="#home">Back to the whole sky</a>
+  </article>
+
+  <article class="card" id="snapcraft">
+    <p class="kind">Website · earlier work</p>
+    <h2>Snapcraft Downloader</h2>
+    <p>Hands you the package file of any Snap Store app, for machines that cannot reach the store themselves.</p>
+    <p class="doors">
+      <a class="door" href="https://snap.salemkode.com/">Open it</a>
+    </p>
+    <a class="back" href="#home">Back to the whole sky</a>
+  </article>
+
+  <article class="card" id="faststarter">
+    <p class="kind">Website · earlier work</p>
+    <h2>FastStarter</h2>
+    <p>Crowdfunding where a smart contract holds the pledges instead of a promise.</p>
+    <p class="doors">
+      <a class="door" href="https://faststarter.salemkode.com/">Open it</a>
+    </p>
+    <a class="back" href="#home">Back to the whole sky</a>
+  </article>
+
+</main>
+
+<script type="module" src="world.js"></script>
+</body>
+</html>

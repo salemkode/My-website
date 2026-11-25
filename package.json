@@ -1,42 +1,16 @@
 {
-  "name": "new.salemkode",
-  "version": "0.1.0",
+  "name": "salemkode-com",
   "private": true,
+  "type": "module",
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint",
-    "lint:fix": "next lint --fix"
-  },
-  "dependencies": {
-    "@radix-ui/react-slot": "^1.0.2",
-    "class-variance-authority": "^0.7.0",
-    "clsx": "^2.0.0",
-    "framer-motion": "^10.16.4",
-    "gsap": "^3.12.2",
-    "lucide-react": "^0.284.0",
-    "next": "13.5.4",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "server-only": "^0.0.1",
-    "tailwind-merge": "^1.14.0",
-    "tailwindcss-animate": "^1.0.7"
+    "build": "bun build src/world.ts --outfile world.js --target browser --format esm --minify",
+    "check": "tsc -p .",
+    "dev": "bun build src/world.ts --outfile world.js --target browser --format esm --watch",
+    "serve": "python3 -m http.server 4173"
   },
   "devDependencies": {
-    "@trivago/prettier-plugin-sort-imports": "^4.2.1",
-    "@types/node": "^20.8.10",
-    "@types/react": "^18.2.34",
-    "@types/react-dom": "^18.2.14",
-    "autoprefixer": "^10.4.16",
-    "eslint": "^8.52.0",
-    "eslint-config-next": "13.5.4",
-    "eslint-config-prettier": "^9.0.0",
-    "eslint-plugin-prettier": "^5.0.1",
-    "postcss": "^8.4.31",
-    "prettier": "^3.0.3",
-    "prettier-plugin-tailwindcss": "^0.5.6",
-    "tailwindcss": "^3.3.5",
-    "typescript": "^5.2.2"
+    "@types/three": "^0.181.0",
+    "three": "0.181.1",
+    "typescript": "^7.0.2"
   }
 }
