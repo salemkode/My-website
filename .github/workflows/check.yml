@@ -1,0 +1,55 @@
+name: Check
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+jobs:
+  site:
+    name: Site files
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      # Every local file the page links to must exist, or the published site has holes.
+      - name: Every linked file exists
+        run: |
+          missing=0
+          for f in $(grep -oE '(src|href)="[^"#:]+"' index.html | sed -E 's/^(src|href)="//; s/"$//' | sort -u); do
+            if [ ! -f "$f" ]; then echo "index.html links to a missing file: $f"; missing=1; fi
+          done
+          for f in $(grep -oE 'url\("[^"]+"\)' styles.css | sed -E 's/^url\("//; s/"\)$//' | sort -u); do
+            if [ ! -f "$f" ]; then echo "styles.css links to a missing file: $f"; missing=1; fi
+          done
+          exit $missing
+
+      - name: Everything the deploy copies exists
+        run: ls index.html styles.css favicon.svg preview.png fonts images
+
+  art:
+    name: Art scene type check
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: art
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v2
+
+      - name: Install
+        run: bun install --frozen-lockfile
+
+      - name: Type check
+        run: bun run check
+
+      - name: Build
+        run: bun run build
