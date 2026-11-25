@@ -176,13 +176,6 @@ ul { padding: 0; list-style: none; }
 }
 .hello-text { display: grid; gap: 1.25rem; max-width: 37rem; justify-self: end; }
 .eyebrow { display: flex; align-items: center; gap: 0.55rem; font-size: 0.9rem; font-weight: 500; }
-.dot {
-  width: 0.62rem;
-  height: 0.62rem;
-  border-radius: 50%;
-  background: #2f9e44;
-  box-shadow: 0 0 0 4px rgb(47 158 68 / 0.22);
-}
 .hello h1 {
   font-family: var(--blocky);
   font-size: clamp(2.9rem, 6.4vw, 5.3rem);
