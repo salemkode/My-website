@@ -27,7 +27,8 @@ Then open http://localhost:4173.
 ## Change the page
 
 - **Words and links:** edit `index.html`.
-- **A new project:** copy one `<article class="case">` in the "Shipped" section, or one `<li>` in "Earlier work", and put its pictures in `images/`.
+- **A new project:** copy one `<article class="mini">` (a small card with a phone) or one `<li>` in "From the archive", and put its pictures in `images/`.
+- **The empty slot:** `<article class="soon">` is kept for the next project. Replace it with a real section when there is something to show.
 - **A new island picture:** see `art/README.md`.
 
 ## Deploy

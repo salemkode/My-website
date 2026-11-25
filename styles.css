@@ -1,5 +1,5 @@
 /* salemkode.com
-   A plain, fast page: who I am, what I shipped, how to reach me.
+   A plain, fast page: who I am, what I built, how to reach me.
    The islands are pictures (see art/), so nothing here needs JavaScript. */
 
 @font-face {
@@ -26,11 +26,13 @@
   --paper: #fffaf2;
   --garden: #e6f2d9;
   --stone: #e8eaf1;
-  --sand: #f4e3c2;
+  --night: #0b1220;
+  --mint: #34d399;
   --blocky: "Handjet", "Courier New", monospace;
   --text: "Readex Pro", system-ui, -apple-system, "Segoe UI", sans-serif;
   --pad: clamp(1.15rem, 5vw, 5rem);
   --wide: 76rem;
+  --round: clamp(1.25rem, 2.4vw, 2.25rem);
   --ease: cubic-bezier(0.22, 0.8, 0.2, 1);
 }
 
@@ -54,9 +56,9 @@ body {
 
 img { display: block; max-width: 100%; height: auto; }
 a { color: inherit; }
-:focus-visible { outline: 3px solid var(--ink); outline-offset: 3px; border-radius: 6px; }
+:focus-visible { outline: 3px solid currentColor; outline-offset: 3px; border-radius: 6px; }
 
-h1, h2, h3, h4, p, ul { margin: 0; }
+h1, h2, h3, h4, p, ul, figure { margin: 0; }
 ul { padding: 0; list-style: none; }
 
 .skip {
@@ -87,6 +89,7 @@ ul { padding: 0; list-style: none; }
   line-height: 0.9;
   letter-spacing: 0.01em;
   text-transform: uppercase;
+  text-wrap: balance;
 }
 .points { display: grid; gap: 0.5rem; }
 .points li { position: relative; padding-left: 1.35rem; }
@@ -99,6 +102,9 @@ ul { padding: 0; list-style: none; }
   height: 0.55em;
   background: var(--leaf);
 }
+.stack { font-size: 0.86rem; font-weight: 500; color: var(--ink-soft); }
+.links { display: flex; flex-wrap: wrap; gap: 0.3rem 1.1rem; font-weight: 500; }
+.links a { text-underline-offset: 0.22em; }
 
 .doors { display: flex; flex-wrap: wrap; gap: 0.5rem; }
 .door {
@@ -195,112 +201,179 @@ ul { padding: 0; list-style: none; }
 .sky { position: relative; aspect-ratio: 1 / 0.94; max-width: 44rem; width: 100%; }
 .sky img { position: absolute; }
 .sky-garden { bottom: -9%; left: 1%; width: 80%; animation: bob 7s ease-in-out infinite; }
-.sky-venn { top: 3%; right: -3%; width: 44%; animation: bob 8s ease-in-out -3s infinite; }
-.sky-balloon { top: 30%; right: 3%; width: 11%; animation: bob 5s ease-in-out -1s infinite; }
+.sky-venn { top: 2%; right: -5%; width: 40%; animation: bob 8s ease-in-out -3s infinite; }
+.sky-light { top: -2%; left: 6%; width: 15%; animation: bob 6s ease-in-out -1s infinite; }
 .sky-cloud { opacity: 0.92; }
-.sky-cloud--a { top: 2%; left: -4%; width: 42%; animation: drift 22s ease-in-out infinite alternate; }
-.sky-cloud--b { top: 44%; right: -12%; width: 34%; animation: drift 28s ease-in-out -8s infinite alternate; }
+.sky-cloud--a { top: 12%; left: 20%; width: 40%; animation: drift 22s ease-in-out infinite alternate; }
+.sky-cloud--b { top: 46%; right: -12%; width: 34%; animation: drift 28s ease-in-out -8s infinite alternate; }
 @keyframes bob { 50% { translate: 0 -1.6%; } }
 @keyframes drift { to { translate: 9% 0; } }
 
 /* ----------------------------------------------------------------- work */
 
-.work { padding: clamp(3rem, 7vw, 6rem) var(--pad) 0; }
-.work > .section-title, .earlier > .section-title { max-width: var(--wide); margin: 0 auto clamp(1.5rem, 3vw, 2.5rem); }
-
-.case {
+.work {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
-  align-items: center;
-  gap: 2rem clamp(1.5rem, 4vw, 4rem);
-  max-width: var(--wide);
-  margin: 0 auto clamp(1.5rem, 3vw, 2.5rem);
-  padding: clamp(1.4rem, 4vw, 3.5rem);
-  border-radius: clamp(1.25rem, 2.4vw, 2.25rem);
-  overflow: hidden;
+  gap: clamp(1.25rem, 2.6vw, 2rem);
+  max-width: calc(var(--wide) + 2 * var(--pad));
+  margin: 0 auto;
+  padding: clamp(2.5rem, 6vw, 5rem) var(--pad);
 }
-.case--garden { background: var(--garden); }
-.case--venn { background: var(--stone); }
-.case--venn .case-text { order: 2; }
-.case-text { display: grid; gap: 1rem; }
-.case h3 {
+
+/* The main project gets the room: a dark panel in the explorer's own colours. */
+.lead {
+  display: grid;
+  gap: clamp(1.75rem, 4vw, 3rem);
+  padding: clamp(1.5rem, 4.5vw, 4rem) clamp(1.4rem, 4.5vw, 4rem) 0;
+  border-radius: var(--round);
+  overflow: hidden;
+  background:
+    radial-gradient(120% 90% at 85% 0%, rgb(52 211 153 / 0.16), transparent 60%),
+    linear-gradient(180deg, #101a33, var(--night) 62%);
+  color: #f3f6fb;
+}
+.lead-text {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+  align-items: end;
+  gap: 1.75rem clamp(1.5rem, 5vw, 5rem);
+}
+.lead-text > div { display: grid; gap: 1rem; }
+.lead .kind { color: var(--mint); }
+.lead h2 {
   font-family: var(--blocky);
-  font-size: clamp(3rem, 6vw, 4.6rem);
+  font-size: clamp(4rem, 10vw, 8rem);
   font-weight: 700;
   font-variation-settings: "ELGR" 1, "ELSH" 2;
-  line-height: 0.82;
+  line-height: 0.78;
   letter-spacing: 0.01em;
   text-transform: uppercase;
 }
-.pitch { font-size: 1.1rem; line-height: 1.5; text-wrap: pretty; }
-.case h4 { margin-top: 0.4rem; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-soft); }
-.stack { font-size: 0.86rem; font-weight: 500; color: var(--ink-soft); }
+.lead .pitch { max-width: 34rem; font-size: 1.12rem; line-height: 1.5; text-wrap: pretty; }
+.lead h3 { font-size: 0.8rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: #9fb0c8; }
+.lead .points li::before { background: var(--mint); }
+.lead .stack { color: #9fb0c8; }
+.lead .door { border-color: var(--mint); background: var(--mint); color: #06281c; }
+.lead .door--plain { border-color: rgb(255 255 255 / 0.3); background: transparent; color: #fff; }
+.lead .door--plain:hover { background: #fff; color: var(--night); }
 
-/* Phone screens, straight from the apps. */
-.screens { position: relative; display: flex; align-items: flex-start; justify-content: center; gap: clamp(0.5rem, 1.4vw, 1.1rem); }
-.screens img:not(.screens-art) {
-  flex: 1 1 0;
-  min-width: 0;
-  max-width: 15.5rem;
-  border: 5px solid var(--ink);
-  border-radius: clamp(1rem, 2.2vw, 1.9rem);
-  background: #fff;
-  box-shadow: 0 22px 44px rgb(42 33 24 / 0.2);
+/* Two real pages from the explorer, in plain browser frames. */
+.browsers { position: relative; padding-right: 9%; }
+.browser {
+  border: 1px solid rgb(255 255 255 / 0.16);
+  border-bottom: 0;
+  border-radius: 0.9rem 0.9rem 0 0;
+  overflow: hidden;
+  background: #05080f;
+  box-shadow: 0 30px 70px rgb(0 0 0 / 0.5);
 }
-.screens--three img:nth-child(2) { margin-top: 2.2rem; }
-.screens--three img:nth-child(3) { margin-top: 4.4rem; }
-.screens--two img:nth-child(2) { margin-top: 3rem; }
-.screens-art { position: absolute; right: -7%; bottom: -16%; width: 56%; animation: bob 8s ease-in-out infinite; }
+.browser::before {
+  content: "";
+  display: block;
+  height: 1.7rem;
+  background:
+    radial-gradient(circle at 1rem 50%, #ff5f57 0.27rem, transparent 0.3rem),
+    radial-gradient(circle at 2rem 50%, #febc2e 0.27rem, transparent 0.3rem),
+    radial-gradient(circle at 3rem 50%, #28c840 0.27rem, transparent 0.3rem),
+    #161d2c;
+}
+.browser img { width: 100%; }
+.browser--side { position: absolute; right: 0; bottom: 0; width: 46%; }
 
-/* -------------------------------------------------------------- earlier */
-
-.earlier { padding: clamp(2.5rem, 6vw, 5rem) var(--pad) clamp(3rem, 7vw, 6rem); }
-.earlier-list {
+/* A place kept empty on purpose. */
+.soon {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 1rem;
-  max-width: var(--wide);
-  margin: 0 auto;
+  justify-items: start;
+  gap: 0.5rem;
+  padding: clamp(1.6rem, 4vw, 3rem) clamp(1.4rem, 4.5vw, 4rem);
+  border: 2px dashed rgb(42 33 24 / 0.3);
+  border-radius: var(--round);
+  background: repeating-linear-gradient(135deg, transparent 0 14px, rgb(42 33 24 / 0.035) 14px 28px);
 }
-.earlier-list li {
-  display: grid;
-  grid-template-columns: 4.6rem minmax(0, 1fr);
-  align-items: center;
-  gap: 1.1rem;
-  padding: 1.2rem 1.3rem;
-  border: 1.5px solid rgb(42 33 24 / 0.14);
-  border-radius: 1.4rem;
-  background: #fff;
-}
-.earlier-list img { max-height: 8.5rem; width: auto; margin: 0 auto; }
-.earlier-list h3 {
-  margin: 0.15rem 0 0.35rem;
+.soon h2 {
   font-family: var(--blocky);
-  font-size: 1.85rem;
+  font-size: clamp(2.6rem, 6vw, 4.6rem);
   font-weight: 700;
   font-variation-settings: "ELGR" 1, "ELSH" 2;
-  line-height: 0.9;
+  line-height: 0.85;
+  text-transform: uppercase;
+  color: rgb(42 33 24 / 0.45);
+}
+.soon p:last-child { color: var(--ink-soft); }
+
+/* The hackathon pair: smaller, and labelled as what they are. */
+.sprint {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(1rem, 2vw, 1.5rem);
+  padding-top: clamp(1.5rem, 4vw, 3rem);
+}
+.sprint-head {
+  display: grid;
+  grid-column: 1 / -1;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
+  align-items: end;
+  gap: 0.8rem clamp(1.5rem, 5vw, 5rem);
+  padding-bottom: 0.5rem;
+}
+.sprint-head p { color: var(--ink-soft); text-wrap: pretty; }
+.mini {
+  display: grid;
+  grid-template-columns: clamp(8.5rem, 16vw, 12.5rem) minmax(0, 1fr);
+  align-items: center;
+  gap: clamp(1.1rem, 2.4vw, 2rem);
+  padding: clamp(1.2rem, 2.6vw, 2.2rem);
+  border-radius: var(--round);
+}
+.mini--garden { background: var(--garden); }
+.mini--venn { background: var(--stone); }
+.mini-text { display: grid; gap: 0.75rem; font-size: 0.95rem; }
+.mini h3 {
+  font-family: var(--blocky);
+  font-size: clamp(2.2rem, 3.8vw, 3rem);
+  font-weight: 700;
+  font-variation-settings: "ELGR" 1, "ELSH" 2;
+  line-height: 0.85;
   text-transform: uppercase;
 }
-.earlier-list p { font-size: 0.92rem; }
-.links { display: flex; gap: 1rem; margin-top: 0.55rem; font-weight: 500; }
-.links a { text-underline-offset: 0.22em; }
+.mini .points { gap: 0.3rem; font-size: 0.9rem; }
+
+/* A phone: dark body, thin bezel, the screenshot inside. */
+.phone {
+  padding: 0.42rem;
+  border-radius: 2.1rem;
+  background: #15120e;
+  box-shadow: inset 0 0 0 1.5px #4a4138, 0 20px 40px rgb(42 33 24 / 0.24);
+}
+.phone img { width: 100%; border-radius: 1.7rem; }
+
+/* Older work, shown as older. */
+.archive {
+  display: grid;
+  grid-template-columns: minmax(0, 0.42fr) minmax(0, 1fr);
+  align-items: start;
+  gap: 1rem clamp(1.5rem, 4vw, 4rem);
+  padding-top: clamp(1.5rem, 4vw, 3rem);
+  border-top: 1.5px solid rgb(42 33 24 / 0.14);
+  color: var(--ink-soft);
+}
+.archive h2 { font-size: 0.8rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; }
+.archive ul { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.25rem 2rem; }
+.archive li { display: grid; grid-template-columns: 2.6rem minmax(0, 1fr); align-items: start; gap: 0.9rem; font-size: 0.9rem; }
+.archive img { filter: grayscale(1) contrast(0.9); opacity: 0.75; }
+.archive h3 { font-size: 1rem; font-weight: 600; color: var(--ink); }
+.archive a { font-weight: 500; text-underline-offset: 0.22em; }
 
 /* ---------------------------------------------------------------- about */
 
 .about {
   display: grid;
-  grid-template-columns: minmax(0, 1.25fr) minmax(0, 0.75fr);
-  align-items: center;
-  gap: 2rem clamp(1.5rem, 5vw, 5rem);
-  padding: clamp(3rem, 7vw, 6rem) max(var(--pad), calc((100% - var(--wide)) / 2));
-  overflow: hidden;
-  background: var(--sand);
+  grid-template-columns: minmax(0, 0.42fr) minmax(0, 1fr);
+  align-items: start;
+  gap: 1.25rem clamp(1.5rem, 4vw, 4rem);
+  padding: clamp(3rem, 7vw, 5.5rem) max(var(--pad), calc((100% - var(--wide)) / 2));
+  background: linear-gradient(180deg, var(--sky-low), var(--sky-top));
 }
-.about-text { display: grid; gap: 1.2rem; max-width: 40rem; }
-.about h3 { margin-top: 0.4rem; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-soft); }
-.note { font-size: 0.88rem; color: var(--ink-soft); text-wrap: pretty; }
-.about-art { width: min(100%, 24rem); justify-self: center; animation: bob 8s ease-in-out infinite; }
+.about .points { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.7rem 2rem; font-size: 1.04rem; }
 
 /* ---------------------------------------------------------------- reach */
 
@@ -308,7 +381,7 @@ ul { padding: 0; list-style: none; }
   display: grid;
   justify-items: center;
   gap: 1.1rem;
-  padding: clamp(3.5rem, 9vw, 7rem) var(--pad);
+  padding: clamp(3.5rem, 9vw, 7rem) var(--pad) clamp(2rem, 4vw, 3rem);
   background: var(--ink);
   color: #fff;
   text-align: center;
@@ -326,7 +399,6 @@ ul { padding: 0; list-style: none; }
   overflow-wrap: anywhere;
 }
 .reach-mail:hover { color: #ffd9b3; }
-.reach :focus-visible { outline-color: #fff; }
 .reach-more { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.5rem; margin-top: 0.6rem; }
 .reach-more a {
   padding: 0.55rem 1.1rem;
@@ -337,6 +409,7 @@ ul { padding: 0; list-style: none; }
   text-decoration: none;
 }
 .reach-more a:hover { background: #fff; color: var(--ink); }
+.reach-note { max-width: 34rem; margin-top: clamp(2rem, 5vw, 3.5rem); font-size: 0.8rem; color: #b9aa98; text-wrap: pretty; }
 
 /* -------------------------------------------------------- smaller screens */
 
@@ -344,18 +417,17 @@ ul { padding: 0; list-style: none; }
   .hello { grid-template-columns: minmax(0, 1fr); }
   .hello-text { justify-self: start; }
   .sky { margin: 0 auto; max-width: 34rem; }
-  .case { grid-template-columns: minmax(0, 1fr); }
-  .case--venn .case-text { order: 0; }
-  .earlier-list { grid-template-columns: minmax(0, 1fr); }
-  .about { grid-template-columns: minmax(0, 1fr); }
-  .about-art { width: min(70%, 20rem); }
+  .lead-text { grid-template-columns: minmax(0, 1fr); }
+  .sprint { grid-template-columns: minmax(0, 1fr); }
+  .sprint-head, .archive, .about { grid-template-columns: minmax(0, 1fr); }
 }
 @media (max-width: 560px) {
   .top-nav a:not(.top-mail) { display: none; }
-  .screens--three img:nth-child(2) { margin-top: 1.2rem; }
-  .screens--three img:nth-child(3) { margin-top: 2.4rem; }
-  .screens img:not(.screens-art) { border-width: 3px; }
-  .screens-art { display: none; }
+  .browsers { padding-right: 0; }
+  .browser--side { display: none; }
+  .mini { grid-template-columns: minmax(0, 1fr); }
+  .phone { width: min(62%, 13rem); margin: 0 auto; }
+  .archive ul, .about .points { grid-template-columns: minmax(0, 1fr); }
 }
 
 @media (prefers-reduced-motion: reduce) {

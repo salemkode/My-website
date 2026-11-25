@@ -7,5 +7,5 @@ the cottage, the clouds and the balloons.
 
 Focus Garden is released under the MIT License, copyright (c) 2025-2026 the Focus Garden contributors.
 
-The site's own places (Shibam, Venn's island, the lighthouse) are in `../places.ts`,
+The site's own places (Venn's island and the lighthouse) are in `../places.ts`,
 built with the same `VoxelModel` so they sit in the same world.

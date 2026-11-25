@@ -6,7 +6,7 @@ import * as THREE from "three";
 import { buildBalloon, buildCloud, buildIsland, buildIslet, buildMarker } from "./garden/models";
 import { buildGrowthModel, buildTierModel, type SpeciesKey, type Tier } from "./garden/tiers";
 import { mulberry32, type VoxelModel } from "./garden/voxel";
-import { buildHome, buildLighthouse, buildVenn, LIGHT_HEIGHT } from "./places";
+import { buildLighthouse, buildVenn, LIGHT_HEIGHT } from "./places";
 
 type Vec = [number, number, number];
 
@@ -151,11 +151,6 @@ function start(canvas: HTMLCanvasElement) {
 		venn.group.add(tree);
 	}
 
-	/* ------------------------------------------------------------- Shibam */
-
-	const shibam = place("shibam", [0, 50, -4], { w: 70, h: 84, lift: 12 });
-	shibam.group.add(meshOf(buildHome()));
-
 	/* ----------------------------------------------------------- Explorer */
 
 	const explorer = place("explorer", [0, 36, 0], { w: 46, h: 62, lift: 8 });
@@ -243,12 +238,12 @@ function start(canvas: HTMLCanvasElement) {
 	// Wide screens get the islands side by side; tall ones get them stacked up the sky.
 	const LAYOUTS: Record<"wide" | "tall", { at: Record<string, Vec>; centre: Vec; view: { w: number; h: number } }> = {
 		wide: {
-			at: { "focus-garden": [-18, -4, 34], venn: [84, 2, 30], shibam: [-10, 44, -66], explorer: [104, 44, -50], snapcraft: [50, 72, -40], faststarter: [126, 2, 58] },
+			at: { "focus-garden": [-18, -4, 34], venn: [84, 2, 30], explorer: [104, 44, -50], snapcraft: [50, 72, -40], faststarter: [126, 2, 58] },
 			centre: [24, 18, -6],
 			view: { w: 286, h: 204 },
 		},
 		tall: {
-			at: { "focus-garden": [-6, -20, 40], venn: [14, 30, -10], shibam: [-14, 78, -60], explorer: [32, 86, -30], snapcraft: [-38, 40, -20], faststarter: [44, 4, 30] },
+			at: { "focus-garden": [-6, -20, 40], venn: [14, 30, -10], explorer: [32, 86, -30], snapcraft: [-38, 40, -20], faststarter: [44, 4, 30] },
 			centre: [0, 34, -14],
 			view: { w: 104, h: 330 },
 		},

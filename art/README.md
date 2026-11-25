@@ -1,6 +1,6 @@
 # The island pictures
 
-The pictures in `../images/` (the islands, balloons and clouds) are drawn from this scene. It uses the voxel engine from Focus Garden, copied unchanged into `src/garden/` (see the `NOTICE.md` there). The models that are only on this site are in `src/places.ts`: Shibam, Venn's island and the lighthouse.
+The pictures in `../images/` (the islands, balloons and clouds) are drawn from this scene. It uses the voxel engine from Focus Garden, copied unchanged into `src/garden/` (see the `NOTICE.md` there). The models that are only on this site are in `src/places.ts`: Venn's island and the lighthouse.
 
 None of this is published. The site only uses the saved pictures.
 
@@ -14,7 +14,7 @@ python3 -m http.server 4173          # from the repository root
 
 Open `http://localhost:4173/art/render.html?only=venn`. The place is drawn alone on a clear background, and **Save this picture** downloads it as a PNG.
 
-Places: `focus-garden`, `venn`, `shibam`, `explorer`, `snapcraft`, `faststarter`, `cloud-41`, `cloud-44`, `cloud-46`.
+Places: `focus-garden`, `venn`, `explorer`, `snapcraft`, `faststarter`, `cloud-41`, `cloud-44`, `cloud-46`.
 
 Crop the PNG to its edges, convert it to WebP, and put it in `../images/`.
 
